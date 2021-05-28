@@ -1,0 +1,103 @@
+<!DOCTYPE ejs>
+<head>
+    <title>Video list</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/css/videoList.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="/js/videosList.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $('#mainContainer').draggable({
+                containment: 'window',
+                handle: '#headerBar'
+            });
+            $('#minimizedVideoDiv').draggable({
+                containment: 'window',
+                handle: '#minimizedCloseBar'
+            });
+            $('#minimizedVideo').resize({
+                containment: 'window',
+                handle: "#headerBar"
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="windowOpen" >Open window</button>
+    <div style="display: none;" id="mainContainer" class="mainContainer mainContainer-hidden"> 
+        <div class="elementsWrap" >
+            <div id="headerBar" class="closeBar" >
+                <button class="ctrlButton ctrlButton-back ctrlButton-hide" id="backPage" >Go Back</button>
+                <p id="itemName" class="itemID" >List of Videos</p>
+                <button class="ctrlButton-close" id="closeWindow" >X</button>
+            </div>
+            <div class="mainAndDetail" >
+                <div style="display: block;" id="wrapperDiv" class="wrapperDiv wrapperDiv-ogPosition" >
+                    <div id="videos" class="videos">
+                    </div>
+                </div>
+                <div style="display: none;" id="videoDetail" class="videoDetail videoDetail-ogPosition" >
+                    <div id="YTiframeWrapper">
+                        <iframe height="100%" width="100%" id="expandedYT" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div id="expandedTextDiv">
+                        <h3 id="expandedVideoTitle">Chapter 1: Intro to Python</h3>
+                        <button id="minimizeBtn" class="ctrlButton ctrlButton-minimize" onclick="minimize()">Minimize</button>
+                        <hr style="margin-left: 32px; margin-right: 32px;">
+                        <p class="textDescription">Lorem ipsum dolor sit amet, <a href="/documents/Research_on_Crowd_Behavior_Analysis_A_Review.pdf" target="_blank">consetetur</a> sadipscing elitr,
+                             sed diam nonumy eirmod tempor invidunt ut labore et do
+                             lore magna aliquyam erat, sed diam voluptua. At vero e
+                             os et accusam et justo duo dolores et ea rebum. Stet c
+                             lita kasd gubergren, no sea takimata sanctus est Lorem
+                             ipsum dolor sit amet. Lorem ipsum dolor sit amet, con
+                             setetur sadipscing elitr,  sed diam nonumy eirmod tem
+                             por invidunt ut labore et dolore magna aliquyam erat,
+                             sed diam voluptua. At vero eos et accusam et justo d
+                             uo dolores et ea rebum. <br><br> Stet clita kasd gubergren, n
+                             o sea takimata sanctus est Lorem ipsum dolor sit ame
+                             t. Lorem ipsum dolor sit amet, consetetur sadipscing
+                             elitr,  sed diam nonumy eirmod tempor invidunt ut l
+                             abore et dolore magna aliquyam erat, sed diam volup
+                             tua. At vero eos et accusam et justo duo dolores et
+                             ea rebum. Stet clita kasd gubergren, no sea takima
+                             ta sanctus est Lorem ipsum dolor sit amet
+                             <br><br>
+                             Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                             sed diam nonumy eirmod tempor invidunt ut labore et do
+                             lore magna aliquyam erat, sed diam voluptua. At vero e
+                             os et accusam et justo duo dolores et ea rebum. Stet c
+                             lita kasd gubergren, no sea takimata sanctus est Lorem
+                             ipsum dolor sit amet. Lorem ipsum dolor sit amet, con
+                             setetur sadipscing elitr,  sed diam nonumy eirmod tem
+                             por invidunt ut labore et dolore magna aliquyam erat,
+                             sed diam voluptua. At vero eos et accusam et justo d
+                             uo dolores et ea rebum. Stet clita kasd gubergren, n
+                             o sea takimata sanctus est Lorem ipsum dolor sit ame
+                             t. Lorem ipsum dolor sit amet, consetetur sadipscing
+                             elitr,  sed diam nonumy eirmod tempor invidunt ut l
+                             abore et dolore magna aliquyam erat, sed diam volup
+                             tua. At vero eos et accusam et justo duo dolores et
+                             ea rebum. Stet clita kasd gubergren, no sea takima
+                             ta sanctus est Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div style="display: none;" id="minimizedVideoDiv" class="minimizedVideoDiv minimizedVideoDiv-hidden">
+        <div id="minimizedCloseBar">
+            <span id="closeMinimize" class="material-icons" onclick="closeMinimize()">fullscreen</span>
+            <span class="material-icons" onclick="maximize()" >close</span>
+        </div>
+        <div id="videoDivMin">
+        </div>
+    </div>
+    
+    
+</body>
