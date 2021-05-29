@@ -5,6 +5,8 @@ var wrapperDiv;
 var videoDetail;
 var backButton;
 var popUpWindow;
+var oldX;
+var oldY;
 
 window.onload = function() {
 
@@ -28,14 +30,21 @@ window.onload = function() {
             popUpWindow.style.display = "none";
         },400);
     };
+    backButton.onclick = function() {
+        if (backButton.innerHTML == "fullscreen") {
+            maximize();
+        }else{
+            transitionLeft();
+        }
+    }
     
-    backButton.onclick = transitionLeft;
 
 };
 
 
 function transitionRight(){
     
+    popUpWindow.classList.add('mainContainer-vidDets');
     wrapperDiv.classList.remove('wrapperDiv-ogPosition');
     wrapperDiv.classList.add('wrapperDiv-movedLeft');
     console.log("Checkpoint 1");
@@ -60,8 +69,6 @@ function transitionRight(){
         }
     );
     
-    backButton.classList.remove('ctrlButton-btnHide');
-    backButton.classList.add('ctrlButton-show');
     document.getElementById('itemName').classList.add('itemID-show');
     document.getElementById('itemName').classList.remove('itemID-btnHide');
     
@@ -69,6 +76,7 @@ function transitionRight(){
 
 function transitionLeft(){
     
+    popUpWindow.classList.remove('mainContainer-vidDets');
     videoDetail.classList.remove('videoDetail-movedLeft');
     videoDetail.classList.add('videoDetail-ogPosition');
 
@@ -89,9 +97,6 @@ function transitionLeft(){
             }, 50);
         }
     );
-
-    backButton.classList.remove('ctrlButton-show');
-    backButton.classList.add('ctrlButton-btnHide');
     document.getElementById('itemName').classList.remove('itemID-show');
     document.getElementById('itemName').classList.add('itemID-btnHide');
 
@@ -107,43 +112,17 @@ function expandVideo(e){
 }
 
 function minimize(){
-    document.getElementById('videoDivMin').innerHTML += "";
-    var iframeToAdd = `<iframe id="ytEmbedMin" src="" width="100%" height="100%" frameborder="0"></iframe>`;
-    document.getElementById('videoDivMin').innerHTML += iframeToAdd;
-    document.getElementById('ytEmbedMin').setAttribute('src', document.getElementById('expandedYT').getAttribute('src'));
-    popUpWindow.classList.add('mainContainer-hidden');
-    popUpWindow.classList.remove('mainContainer-show');
-    setTimeout(function() {
-        popUpWindow.style.display = "none";
-        document.getElementById('minimizedVideoDiv').style.display = "block";
-        document.getElementById('minimizedVideoDiv').classList.remove('minimizedVideoDiv-hidden');
-        document.getElementById('minimizedVideoDiv').classList.add('minimizedVideoDiv-show');
-    },400);
-}
-
-function closeMinimize(){
-    document.getElementById('minimizedVideoDiv').classList.remove('minimizedVideoDiv-show');
-    document.getElementById('minimizedVideoDiv').classList.add('minimizedVideoDiv-hidden');
-    setTimeout(function() {
-        popUpWindow.style.display = "block";
-        popUpWindow.classList.remove('mainContainer-hidden');
-        popUpWindow.classList.add('mainContainer-show');
-        document.getElementById('minimizedVideoDiv').style.display = "none";
-        setTimeout(function(){
-            document.getElementById('videoDivMin').innerHTML += "";
-        }, 50);
-    },400);
+    popUpWindow.classList.add('mainContainer-videoMinimized');
+    document.getElementById('expandedTextDiv').style.display = "none";
+    document.getElementById('headerBar').classList.add('closeBar-minimized');
+    document.getElementById('backPage').innerHTML = "fullscreen";
 }
 
 function maximize(){
-    document.getElementById('minimizedVideoDiv').classList.remove('minimizedVideoDiv-show');
-    document.getElementById('minimizedVideoDiv').classList.add('minimizedVideoDiv-hidden');
-    setTimeout(function() {
-        document.getElementById('minimizedVideoDiv').style.display = "none";
-        setTimeout(function(){
-            document.getElementById('videoDivMin').innerHTML += "";
-        }, 50);
-    },380);
+    popUpWindow.classList.remove('mainContainer-videoMinimized');
+    document.getElementById('expandedTextDiv').style.display = "block";
+    document.getElementById('headerBar').classList.remove('closeBar-minimized');
+    document.getElementById('backPage').innerHTML = "arrow_back";
 }
 
 function getVideoIds() {
