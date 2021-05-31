@@ -94,6 +94,7 @@ function transitionLeft(){
                 wrapperDiv.classList.remove('wrapperDiv-movedLeft');
                 wrapperDiv.classList.add('wrapperDiv-ogPosition');
                 document.getElementById('mainContainer').classList.remove('mainContainer-smaller');
+                document.getElementById('expandedYT').setAttribute('src', '');
             }, 50);
         }
     );
