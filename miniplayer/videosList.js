@@ -5,39 +5,57 @@ var wrapperDiv;
 var videoDetail;
 var backButton;
 var popUpWindow;
+var elementsWrap = null;
 var oldX;
 var oldY;
 
 window.onload = function() {
 
-    backButton  = document.getElementById('backPage');
-    wrapperDiv  = document.getElementById('wrapperDiv');
-    videoDetail = document.getElementById('videoDetail');
     
     getVideoIds();
-
+    
     popUpWindow = document.getElementById('mainContainer');
     document.getElementById('windowOpen').onclick = function() {
+        if(elementsWrap){
+            popUpWindow.prepend(elementsWrap);
+        }else{
+            insertVideos();
+            elementsWrap = document.getElementById('elementsWrap').cloneNode(true);
+        }
         popUpWindow.style.display = "block";
         popUpWindow.classList.add('mainContainer-show');
         popUpWindow.classList.remove('mainContainer-hidden');
-    };
-
-    document.getElementById('closeWindow').onclick = function() {
-        popUpWindow.classList.add('mainContainer-hidden');
-        popUpWindow.classList.remove('mainContainer-show');
-        setTimeout(function() {
-            popUpWindow.style.display = "none";
-        },400);
-    };
-    backButton.onclick = function() {
-        if (backButton.innerHTML == "fullscreen") {
-            maximize();
-        }else{
-            transitionLeft();
+        backButton  = document.getElementById('backPage');
+        wrapperDiv  = document.getElementById('wrapperDiv');
+        videoDetail = document.getElementById('videoDetail');
+        try{
+            document.getElementById('closeWindow').onclick = function() {
+                popUpWindow.classList.add('mainContainer-hidden');
+                popUpWindow.classList.remove('mainContainer-show');
+                setTimeout(function() {
+                    popUpWindow.style.display = "none";
+                    if(videoDetail.style.display == "block"){
+                        transitionLeft();
+                    }
+                    document.getElementById('elementsWrap').remove();
+                },350);
+            };
+        }catch(err){
+            console.log(err);
         }
-    }
     
+        try{
+            backButton.onclick = function() {
+                if (backButton.innerHTML == "fullscreen") {
+                    maximize();
+                }else{
+                    transitionLeft();
+                }
+            }
+        }catch(err){
+            console.log(err);
+        }
+    };
 
 };
 
@@ -47,7 +65,6 @@ function transitionRight(){
     popUpWindow.classList.add('mainContainer-vidDets');
     wrapperDiv.classList.remove('wrapperDiv-ogPosition');
     wrapperDiv.classList.add('wrapperDiv-movedLeft');
-    console.log("Checkpoint 1");
     
     
     let displayPromise = new Promise(function(res,rej) {
@@ -127,29 +144,6 @@ function maximize(){
 }
 
 function getVideoIds() {
-    /*
-    var ajaxRequest = new XMLHttpRequest();
-    ajaxRequest.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 200) {
-            var videoIDs = JSON.parse(this.response);
-            console.log(videoIDs);
-            for (let i = 0 ; i < videoIDs.length ; i++) {
-                var newVideo = `<div onclick="expandVideo(this)" class="video">
-                                    <img class="thumbnail" src="${videoIDs[i].thumbnail}" alt="">
-                                    <p style="display: none" class="videoID">${videoIDs[i].videoID}</p>
-                                    <div class="textInfo">
-                                        <h3 class="videoTitle">${videoIDs[i].title}</h3>
-                                        <hr/>
-                                        <p>${videoIDs[i].description}</p>
-                                    </div>
-                                </div>`;
-                document.getElementById('videos').innerHTML += newVideo;
-            }
-        }
-    };
-    ajaxRequest.open("GET", "https://drive.google.com/file/d/18RTzGwmWkmHMwxsXEXv1VsrfttZXCILK/view?usp=sharing&alt=media", true);
-    ajaxRequest.send();
-    */
    videoIDs = [
                {
                    videoID:"AJmt7S6x298",
@@ -176,17 +170,21 @@ function getVideoIds() {
                    thumbnail: "http://cdn.cloudflare.steamstatic.com/steam/apps/1328670/capsule_616x353.jpg?t=1612449050"
                },
            ];
+}
+
+
+function insertVideos() {
     for (let i = 0 ; i < videoIDs.length ; i++) {
-       var newVideo = `<div onclick="expandVideo(this)" class="video">
-                           <img class="thumbnail" src="${videoIDs[i].thumbnail}" alt="">
-                           <p style="display: none" class="videoID">${videoIDs[i].videoID}</p>
-                           <div class="textInfo">
-                               <h3 class="videoTitle">${videoIDs[i].title}</h3>
-                               <hr/>
-                               <p>${videoIDs[i].description}</p>
-                           </div>
-                       </div>`;
-       document.getElementById('videos').innerHTML += newVideo;
-    }
+        var newVideo = `<div onclick="expandVideo(this)" class="video">
+                            <img class="thumbnail" src="${videoIDs[i].thumbnail}" alt="">
+                            <p style="display: none" class="videoID">${videoIDs[i].videoID}</p>
+                            <div class="textInfo">
+                                <h3 class="videoTitle">${videoIDs[i].title}</h3>
+                                <hr/>
+                                <p>${videoIDs[i].description}</p>
+                            </div>
+                        </div>`;
+        document.getElementById('videos').innerHTML += newVideo;
+     }
 }
 
