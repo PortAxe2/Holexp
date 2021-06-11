@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+    <title>HOLEXP</title>
+    <meta lang="en" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+          rel="stylesheet">
+</head>
+
+<body>
+    <div id="landingDiv">
+        <div id="navbar">
+            <object data="./assets/logo.svg" type="image/svg+xml" title="logo"></object>
+            <div id="quickLinks">
+                <ul>
+                    <li onclick="scrollToDiv('projects')">Projects</li>
+                    <li onclick="scrollToDiv('offerings')">Offerings</li>
+                    <li onclick="scrollToDiv('aboutUs')">About</li>
+                    <li onclick="scrollToDiv('signUp')">Sign Up</li>
+                </ul>
+            </div>
+        </div>
+        <div id="introductoryInfo">
+            <div id="infoText">
+                <h1>Who said coding<br/>is difficult</h1>
+                <h6>With Holepx, it's never been easier</h6>
+                <button>
+                    <p>Check it out</p>
+                    <span class="material-icons-outlined">chevron_right</span>
+                </button>
+            </div>
+            <img src="./assets/Asset 38.png" alt="Holexp logo">
+        </div>
+    </div>
+    <div id="features">
+        <div id="featuresSubDiv"> 
+            <div class="feature" onclick="scrollToDiv('projects')">
+                <img src="./assets/Projects.png" alt="">
+                <p>Projects</p>
+                <span class="material-icons">expand_more</span>
+            </div> 
+            <div class="feature" onclick="scrollToDiv('offerings')">
+                <img src="./assets/Offerings.png" alt="">
+                <p>Offerings</p>
+                <span class="material-icons">expand_more</span>
+            </div> 
+            <div class="feature" onclick="scrollToDiv('aboutUs')">
+                <img src="./assets/About Us.png" alt="">
+                <p>About</p>
+                <span class="material-icons">expand_more</span>
+            </div> 
+            <div class="feature" onclick="scrollToDiv('signUp')">
+                <img src="./assets/Sign Up.png" alt="">
+                <p>Sign Up</p>
+                <span class="material-icons">expand_more</span>
+            </div> 
+        </div>
+    </div>
+    <div id="projects">
+        <div id="projectsInfo">
+            <div id="infoTextProj">
+                <h1>Projects</h1>
+                <p>With Holexp, it’s never been easier! Technology is the sum of techniques, 
+                    skills, methods, and processes used in the production of goods or services
+                    or in the accomplishment of objectives, such as scientific investigation.
+                    Technology is the sum. With Holexp, it’s never been easier! Technology 
+                    is the sum of techniques, skills, methods, and processes used. 
+                    <br><br><br>
+                    The production of goods or services or in the accomplishment of 
+                    objectives, such as scientific investigation. Technology is the sum.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="offerings" style="background-image: url('./assets/arduinoOffering.png');"> 
+        <div class="offeringsDiv" id="offeringsTitle">
+            <h1>Offerings</h1>
+        </div>
+        <div class="offeringsDiv" id="offeringsList">
+            <ul>
+                <li class="offeringListItem offeringListItem-selected" onclick="setOffering(this)">Arduino</li>
+                <li class="offeringListItem" onclick="setOffering(this)">Fan</li>
+                <li class="offeringListItem" onclick="setOffering(this)">LED</li>
+            </ul>
+            <ul>
+                <li class="offeringListItem" onclick="setOffering(this)">Wires</li>
+                <li class="offeringListItem" onclick="setOffering(this)">DC Motor</li>
+                <li class="offeringListItem" onclick="setOffering(this)">Sensor</li>
+            </ul>
+        </div> 
+    </div>
+    <div id="aboutUs">
+        <div id="aboutUsHeader">
+            <h1>About Us</h1>
+        </div>
+        <div id="aboutUsDivs">
+            <div class="aboutUsDiv" id="Holexp">
+                <img src="./assets/Holexp.png" alt="">
+                <div class="aboutUsText">
+                    <h3>Holexp</h3>
+                    <p>With Holexp, it’s never been easier! 
+                        Technology is the sum of techniques,
+                        skills, methods, and processes used 
+                        in the production of goods or services.
+                    </p>
+                </div>
+            </div>
+            <div class="aboutUsDiv" id="ourVision">
+                <img src="./assets/ourVision@2x.png" alt="">
+                <div class="aboutUsText">
+                    <h3>Our vision</h3>
+                    <p>With Holexp, it’s never been easier! 
+                        Technology is the sum of techniques,
+                        skills, methods, and processes used 
+                        in the production of goods or services.
+                    </p>
+                </div>
+            </div>
+            <div class="aboutUsDiv" id="ourMission">
+                <img src="./assets/ourMission@2x.png" alt="">
+                <div class="aboutUsText">
+                    <h3>Our mission</h3>
+                    <p>With Holexp, it’s never been easier! 
+                        Technology is the sum of techniques,
+                        skills, methods, and processes used 
+                        in the production of goods or services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        var offeringsMap = {
+            "Arduino": "url('./assets/arduinoOffering.png')",
+            "Fan":     "url('./assets/fanOffering.png')"
+        }
+
+        function scrollToDiv(targetDiv, e){
+            console.log(targetDiv);
+            //document.getElementById(targetDiv).scrollIntoView();
+            $('html, body').animate({
+                scrollTop: '-=80px'
+            },350);
+            $('html, body').animate({
+                scrollTop: $(`#${targetDiv}`).offset().top
+            },500);
+        }
+
+        function setOffering(event) {
+            console.log(event.innerHTML);
+            document.getElementsByClassName('offeringListItem-selected')[0].classList.remove('offeringListItem-selected');
+            event.classList.add('offeringListItem-selected');
+            document.getElementById("offerings").style.backgroundImage = offeringsMap[event.innerHTML];
+        }
+    </script>
+
+</body>
