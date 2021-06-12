@@ -30,6 +30,102 @@
   stop-color: #ED7FA0;
 }
 
+@media only screen and (min-width: 1300px) {
+  #aboutUs {
+        grid-template-areas: "Holexp ourVision ourMission";
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #aboutUs {
+        grid-template-areas: "Holexp ourVision"
+ "ourMission ourMission";
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  #features {
+        grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3"
+ "featuresDiv4 featuresDiv8 featuresDiv8";
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  #offerings {
+    background-size: cover;
+    margin-bottom: 128px;
+  }
+  #offeringsTitle {
+    padding-left: 300px;
+    padding-bottom: 18px;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  #offeringsTitle h1 {
+    font-size: 48pt;
+  }
+  .offeringListItem, #offeringsList ul .offeringListItem-selected, .offeringsList ul .offeringListItem-selected {
+    font-size: 18pt;
+    margin: 32px;
+  }
+  .offeringListItem-selected {
+    font-weight: 600;
+  }
+  #offeringsList {
+    padding-left: 256px;
+    padding-bottom: 64px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  #aboutUs {
+        grid-template-areas: "Holexp"
+ "ourVision"
+ "ourMission";
+  }
+  #offerings {
+    background-size: contain;
+  }
+  #offeringsTitle {
+    padding-left: 350px;
+  }
+  #offeringsTitle h1 {
+    font-size: 24pt;
+  }
+  #offeringsList {
+    padding-bottom: 320px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #offeringsList {
+    padding-bottom: 500px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #features {
+        grid-template-areas: "featuresDiv1 featuresDiv2"
+ "featuresDiv3 featuresDiv4";
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  #features {
+        grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #features {
+        grid-template-areas: "featuresDiv1"
+ "featuresDiv2"
+ "featuresDiv3"
+ "featuresDiv4";
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #introductoryInfo {
     -webkit-box-orient: vertical;
@@ -206,22 +302,21 @@ body {
 }
 
 #features {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
   padding-top: 128px;
   padding-bottom: 256px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-items: center;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  row-gap: 8px;
 }
 
 #features a {
@@ -232,9 +327,6 @@ body {
 #features .feature {
   width: 330px;
   height: 360px;
-  min-width: 130px;
-  min-height: 160px;
-  margin: 8px;
   background-color: white;
   padding: 16px;
   border-radius: 16px;
@@ -319,7 +411,8 @@ body {
 }
 
 #projects #projectsInfo #infoTextProj {
-  width: 70%;
+  line-height: 2rem;
+  width: 65%;
   float: left;
 }
 
@@ -339,7 +432,6 @@ body {
 
 #offerings {
   margin-top: 128px;
-  margin-bottom: 128px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,7 +440,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 85vh;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #offeringsTitle {
@@ -358,15 +450,9 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-left: 300px;
-  padding-bottom: 64px;
 }
 
 #offeringsTitle h1 {
-  font-size: 34pt;
   font-weight: 800;
 }
 
@@ -380,15 +466,11 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 256px;
-  padding-bottom: 64px;
 }
 
 #offeringsList ul .offeringListItem, #offeringsList ul .offeringListItem-selected, .offeringsList ul .offeringListItem, .offeringsList #offeringsList ul .offeringListItem-selected, #offeringsList .offeringsList ul .offeringListItem-selected, .offeringsList ul .offeringListItem-selected {
   color: #e0e0e0;
-  font-size: 18pt;
   font-weight: 500;
-  margin: 32px;
   -webkit-transition: 0.1s ease-out;
   transition: 0.1s ease-out;
 }
@@ -400,9 +482,7 @@ body {
 #offeringsList ul .offeringListItem-selected, .offeringsList ul .offeringListItem-selected {
   -webkit-transition: 0.1s ease-out;
   transition: 0.1s ease-out;
-  font-size: 20pt;
   color: white;
-  font-weight: 600;
 }
 
 .offeringsDiv {
@@ -411,20 +491,17 @@ body {
 
 #aboutUs {
   margin-top: 64px;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
   padding-bottom: 128px;
 }
 
