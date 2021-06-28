@@ -32,28 +32,39 @@
 
 @media only screen and (min-width: 1300px) {
   #aboutUs {
-        grid-template-areas: "Holexp ourVision ourMission";
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  /*#features{
+        grid-template-areas:
+        "featuresDiv1 featuresDiv2 featuresDiv3"
+        "featuresDiv4 featuresDiv8 featuresDiv8";
+    }*/
+  #projects {
+    background-position: -100px,0px;
   }
 }
 
 @media only screen and (max-width: 1300px) {
   #aboutUs {
-        grid-template-areas: "Holexp ourVision"
- "ourMission ourMission";
+    width: 100%;
   }
-}
-
-@media only screen and (max-width: 1500px) {
-  #features {
-        grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3"
- "featuresDiv4 featuresDiv8 featuresDiv8";
+  #projects {
+    background-position: -300px,0px;
   }
 }
 
 @media only screen and (min-width: 880px) {
+  /*
+    #offerings{
+        background-size: cover;
+        margin-bottom: 128px;
+    }
+    */
   #offerings {
-    background-size: cover;
-    margin-bottom: 128px;
+    margin-top: 128px;
   }
   #offeringsTitle {
     padding-left: 300px;
@@ -76,17 +87,36 @@
     padding-left: 256px;
     padding-bottom: 64px;
   }
+  #offeringsText {
+    width: 35%;
+    padding: 16px;
+    padding-left: 128px;
+  }
 }
 
 @media only screen and (max-width: 880px) {
-  #aboutUs {
-        grid-template-areas: "Holexp"
- "ourVision"
- "ourMission";
-  }
+  /*
+    #aboutUs{
+        grid-template-areas: 
+        "Holexp"
+        "ourVision"
+        "ourMission"    
+        ;
+    }*/
   #offerings {
-    background-size: contain;
+    margin-top: 0px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
+  #offeringsText {
+    width: 80%;
+    padding-bottom: 16px;
+  }
+  /*
+    #offerings{
+        background-size: contain;
+    }*/
   #offeringsTitle {
     padding-left: 350px;
   }
@@ -105,27 +135,45 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  #features {
-        grid-template-areas: "featuresDiv1 featuresDiv2"
- "featuresDiv3 featuresDiv4";
+  /*#features{
+        grid-template-areas:
+        "featuresDiv1 featuresDiv2"
+        "featuresDiv3 featuresDiv4";
+    }*/
+  #YTWrapper {
+    width: 100%;
   }
 }
 
-@media only screen and (min-width: 1500px) {
-  #features {
-        grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+@media only screen and (min-width: 1200px) {
+  /*#features{
+        grid-template-areas:
+        "featuresDiv1 featuresDiv2"
+        "featuresDiv3 featuresDiv4";
+    }*/
+  #YTWrapper {
+    width: 50%;
   }
 }
 
-@media only screen and (max-width: 750px) {
-  #features {
-        grid-template-areas: "featuresDiv1"
- "featuresDiv2"
- "featuresDiv3"
- "featuresDiv4";
-  }
+/*
+@media only screen and (min-width: 1500px){
+    #features{
+        grid-template-areas:
+        "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+    }
 }
 
+@media only screen and (max-width: 750px){
+    #features{
+        grid-template-areas:
+        "featuresDiv1"
+        "featuresDiv2"
+        "featuresDiv3"
+        "featuresDiv4";
+    }
+}
+*/
 @media only screen and (max-width: 600px) {
   #introductoryInfo {
     -webkit-box-orient: vertical;
@@ -232,6 +280,12 @@ body {
   cursor: pointer;
 }
 
+#videoContainer {
+  width: 100%;
+  background-color: white;
+  height: 500px;
+}
+
 #introductoryInfo {
   margin: auto;
   padding-bottom: 128px;
@@ -278,12 +332,24 @@ body {
   transition: 0.3s ease-out;
 }
 
+#introductoryInfo #infoText button span {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
 #introductoryInfo #infoText button:hover {
   cursor: pointer;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   background-color: white;
   color: #010B1C;
+}
+
+#introductoryInfo #infoText button:hover span {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
 }
 
 #introductoryInfo #infoText button p {
@@ -301,19 +367,76 @@ body {
   font-size: 32pt;
 }
 
+#YTWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  padding-bottom: 64px;
+}
+
+.videoEmbed {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.videoEmbed-collapsed {
+  display: none;
+}
+
+.videoEmbed-expanded {
+  display: block;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  height: 0px;
+}
+
+.videoEmbed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5a5a5a6e;
+  border-radius: 10px;
+}
+
 #features {
   display: -ms-grid;
   display: grid;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 80%;
+  overflow-x: scroll;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
+  padding: 16px;
   padding-top: 128px;
   padding-bottom: 256px;
   justify-items: center;
+      grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
   -webkit-column-gap: 8px;
           column-gap: 8px;
   row-gap: 8px;
@@ -412,7 +535,7 @@ body {
 
 #projects #projectsInfo #infoTextProj {
   line-height: 2rem;
-  width: 65%;
+  width: 80%;
   float: left;
 }
 
@@ -431,14 +554,14 @@ body {
 }
 
 #offerings {
-  margin-top: 128px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-size: cover;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   height: 85vh;
   background-repeat: no-repeat;
 }
@@ -454,6 +577,23 @@ body {
 
 #offeringsTitle h1 {
   font-weight: 800;
+}
+
+#offeringsText {
+  line-height: 2rem;
+  font-family: 'Archivo', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e0e0e0;
+  font-size: 16pt;
+  font-weight: 300;
 }
 
 #offeringsList, .offeringsList {
@@ -490,10 +630,8 @@ body {
 }
 
 #aboutUs {
+  overflow-x: scroll;
   margin-top: 64px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -503,6 +641,9 @@ body {
   margin-right: auto;
   justify-items: center;
   padding-bottom: 128px;
+  -webkit-column-gap: 0px;
+          column-gap: 0px;
+      grid-template-areas: "Holexp ourVision ourMission";
 }
 
 #aboutUsDivs {
@@ -560,7 +701,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 36px;
+  padding: 32px;
+  padding-top: 12px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -570,12 +712,12 @@ body {
 }
 
 .aboutUsDiv .aboutUsText h3 {
-  font-size: 24pt;
+  font-size: 20pt;
   margin-bottom: 16px;
 }
 
 .aboutUsDiv .aboutUsText p {
-  line-height: 2rem;
-  font-size: 14pt;
+  line-height: 1.3rem;
+  font-size: 12pt;
 }
 /*# sourceMappingURL=index.css.map */
