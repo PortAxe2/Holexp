@@ -60,60 +60,14 @@
     }    
 }
 
-@media only screen and (max-width: 1500px){
-    /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2 featuresDiv3"
-        "featuresDiv4 featuresDiv8 featuresDiv8";
-    }*/
-    // #projects{
-    //     background-position: -100px,0px;
-    // }
-    
-}
-
-@media only screen and (min-width:1800px){
-    /*#landingDiv{
-        height: 950px;
-    }*/
-}
-
-@media only screen and (max-width:1800px){
-    /*#landingDiv{
-        height: 800px;
-    }*/
-}
-
-@media only screen and (max-width:1600px){
-    /*#landingDiv{
-        height: 700px;
-    }*/
-}
-
-@media only screen and (max-width:1600px){
-    /*#landingDiv{
-        height: 550px;
-    }*/
-}
-
 @media only screen and (max-width:1300px){
     #aboutUs{
         width: 90%;
     }
-    
-    // #projects{
-    //     background-position: -300px,0px;
-    // }
 }
 
 
 @media only screen and (min-width:880px){
-    /*
-    #offerings{
-        background-size: cover;
-        margin-bottom: 128px;
-    }
-    */
     #offerings{
         margin-top: 128px;
     }
@@ -162,14 +116,6 @@
 }
 
 @media only screen and (max-width:880px){
-    /*
-    #aboutUs{
-        grid-template-areas: 
-        "Holexp"
-        "ourVision"
-        "ourMission"    
-        ;
-    }*/
     #offerings{
         margin-top: 0px;
         align-items: center;
@@ -178,10 +124,6 @@
         width: 80%;
         padding-bottom: 16px;
     }
-    /*
-    #offerings{
-        background-size: contain;
-    }*/
     #offeringsTitle{
         padding-left: 0;
         justify-content: center;
@@ -219,45 +161,17 @@
 
 
 @media only screen and (max-width:1200px){
-    /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2"
-        "featuresDiv3 featuresDiv4";
-    }*/
     #YTWrapper{
         width: 100%;
     }
 }
 
 @media only screen and (min-width:1200px){
-    /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2"
-        "featuresDiv3 featuresDiv4";
-    }*/
     #YTWrapper{
         width: 50%;
     }
 }
 
-/*
-@media only screen and (min-width: 1500px){
-    #features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
-    }
-}
-
-@media only screen and (max-width: 750px){
-    #features{
-        grid-template-areas:
-        "featuresDiv1"
-        "featuresDiv2"
-        "featuresDiv3"
-        "featuresDiv4";
-    }
-}
-*/
 
 //Smaller Screens
 @media only screen and (max-width: 600px){
@@ -299,17 +213,15 @@
     #landingDiv{
         padding-top: 32px;
     }
-    /*
-    #features{
-        flex-direction: row;
-    }
-    */
+
     .feature{
         float: left;
     }
+
     #projects{
         background-size: contain;
     }
+
     #projectsInfo{
         width: 40%;
         padding: 128px;
@@ -329,10 +241,6 @@ body{
 
 #landingDiv{
     height: fit-content;
-    // background-image: url('./assets/HOME_2x.png');
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: right;
 }
 
 #navbar{
@@ -371,10 +279,6 @@ body{
     display: flex;
     align-items: center;
     height: fit-content;
-    // background-image: url('./assets/HOME_2x.png');
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: right;
     #infoText{
         padding:  32px;
         display: flex;
@@ -385,7 +289,7 @@ body{
             margin: 0;
             margin-bottom: 8px;
         }
-        button{
+        .check{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -527,8 +431,6 @@ body{
     column-gap: 8px;
     row-gap: 8px;
     .feature{
-        // width: 330px;
-        // height: 360px;
         width: 250px;
         height: 300px;
         background-color: rgb(255, 255, 255);
@@ -850,6 +752,7 @@ body{
     .logSignHeader{
         font-size: 3rem;
         font-weight: 900;
+        margin: 0;
     }
     .fieldTag{
         display: flex;
@@ -857,7 +760,7 @@ body{
         width: 400px;
         height: 45px;
         border-radius: 2rem;
-        margin-bottom: 32px;
+        margin-top: 32px;
         border-color: rgba($color: #010B1C, $alpha: 0.25);
         input{
             border: none;
@@ -907,7 +810,7 @@ body{
     display: flex;
     font-size: 14pt;
     font-weight: 800;
-    margin-bottom: 32px;
+    margin-top: 32px;
     border-radius: 2rem;
     align-items: center;
     justify-content: center;
@@ -973,9 +876,16 @@ body{
     text-decoration: underline;
     font-size: 12pt;
     font-weight: 600;
+    margin-top: 32px;
     &:hover{
         cursor: pointer;
     }
+}
+
+.forgotPassword{
+    @extend .noYesAccount;
+    margin-top: 8px;
+    margin-bottom: 32px;
 }
 
 .fanButton{
@@ -1022,3 +932,9 @@ body{
         }
     }
 }
+
+.arabic{
+    display: none;
+    
+}
+

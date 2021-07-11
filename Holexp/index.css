@@ -54,38 +54,6 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
-  /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2 featuresDiv3"
-        "featuresDiv4 featuresDiv8 featuresDiv8";
-    }*/
-}
-
-@media only screen and (min-width: 1800px) {
-  /*#landingDiv{
-        height: 950px;
-    }*/
-}
-
-@media only screen and (max-width: 1800px) {
-  /*#landingDiv{
-        height: 800px;
-    }*/
-}
-
-@media only screen and (max-width: 1600px) {
-  /*#landingDiv{
-        height: 700px;
-    }*/
-}
-
-@media only screen and (max-width: 1600px) {
-  /*#landingDiv{
-        height: 550px;
-    }*/
-}
-
 @media only screen and (max-width: 1300px) {
   #aboutUs {
     width: 90%;
@@ -93,12 +61,6 @@
 }
 
 @media only screen and (min-width: 880px) {
-  /*
-    #offerings{
-        background-size: cover;
-        margin-bottom: 128px;
-    }
-    */
   #offerings {
     margin-top: 128px;
   }
@@ -150,14 +112,6 @@
 }
 
 @media only screen and (max-width: 880px) {
-  /*
-    #aboutUs{
-        grid-template-areas: 
-        "Holexp"
-        "ourVision"
-        "ourMission"    
-        ;
-    }*/
   #offerings {
     margin-top: 0px;
     -webkit-box-align: center;
@@ -168,10 +122,6 @@
     width: 80%;
     padding-bottom: 16px;
   }
-  /*
-    #offerings{
-        background-size: contain;
-    }*/
   #offeringsTitle {
     padding-left: 0;
     -webkit-box-pack: center;
@@ -215,45 +165,17 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2"
-        "featuresDiv3 featuresDiv4";
-    }*/
   #YTWrapper {
     width: 100%;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  /*#features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2"
-        "featuresDiv3 featuresDiv4";
-    }*/
   #YTWrapper {
     width: 50%;
   }
 }
 
-/*
-@media only screen and (min-width: 1500px){
-    #features{
-        grid-template-areas:
-        "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
-    }
-}
-
-@media only screen and (max-width: 750px){
-    #features{
-        grid-template-areas:
-        "featuresDiv1"
-        "featuresDiv2"
-        "featuresDiv3"
-        "featuresDiv4";
-    }
-}
-*/
 @media only screen and (max-width: 600px) {
   #introductoryInfo {
     -webkit-box-orient: vertical;
@@ -295,11 +217,6 @@
   #landingDiv {
     padding-top: 32px;
   }
-  /*
-    #features{
-        flex-direction: row;
-    }
-    */
   .feature {
     float: left;
   }
@@ -401,7 +318,7 @@ body {
   margin-bottom: 8px;
 }
 
-#introductoryInfo #infoText button {
+#introductoryInfo #infoText .check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,12 +342,12 @@ body {
   transition: 0.3s ease-out;
 }
 
-#introductoryInfo #infoText button span {
+#introductoryInfo #infoText .check span {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
-#introductoryInfo #infoText button:hover {
+#introductoryInfo #infoText .check:hover {
   cursor: pointer;
   -webkit-filter: brightness(1.1);
           filter: brightness(1.1);
@@ -439,24 +356,24 @@ body {
   color: #010B1C;
 }
 
-#introductoryInfo #infoText button:hover span {
+#introductoryInfo #infoText .check:hover span {
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
 }
 
-#introductoryInfo #infoText button:active {
+#introductoryInfo #infoText .check:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-#introductoryInfo #infoText button p {
+#introductoryInfo #infoText .check p {
   font-weight: 700;
   font-size: 12pt;
 }
 
-#introductoryInfo #infoText button span {
+#introductoryInfo #infoText .check span {
   margin: 0;
   font-weight: 100;
 }
@@ -1072,6 +989,7 @@ body {
 .signLogDivs .logSignHeader {
   font-size: 3rem;
   font-weight: 900;
+  margin: 0;
 }
 
 .signLogDivs .fieldTag {
@@ -1084,7 +1002,7 @@ body {
   width: 400px;
   height: 45px;
   border-radius: 2rem;
-  margin-bottom: 32px;
+  margin-top: 32px;
   border-color: rgba(1, 11, 28, 0.25);
 }
 
@@ -1155,7 +1073,7 @@ body {
   display: flex;
   font-size: 14pt;
   font-weight: 800;
-  margin-bottom: 32px;
+  margin-top: 32px;
   border-radius: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1250,16 +1168,22 @@ body {
   margin: 0;
 }
 
-.noYesAccount {
+.noYesAccount, .forgotPassword {
   border: none;
   background: none;
   text-decoration: underline;
   font-size: 12pt;
   font-weight: 600;
+  margin-top: 32px;
 }
 
-.noYesAccount:hover {
+.noYesAccount:hover, .forgotPassword:hover {
   cursor: pointer;
+}
+
+.forgotPassword {
+  margin-top: 8px;
+  margin-bottom: 32px;
 }
 
 .fanButton {
@@ -1332,5 +1256,9 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-delay: var(--Order);
           animation-delay: var(--Order);
+}
+
+.arabic {
+  display: none;
 }
 /*# sourceMappingURL=index.css.map */

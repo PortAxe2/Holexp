@@ -10,22 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
 <body>
     <button id="SwitchLang">
-        <p lang="en">Switch Language</p>
-        <p lang="ar" style="font-size: 10pt;">تبديل اللغة</p>
+        <p class="english">Switch Language</p>
+        <p class="arabic" style="font-size: 10pt;">تبديل اللغة</p>
         <span class="material-icons">language</span>
     </button>
     
     <div id="landingDiv">
         <div id="navbar">
-
             <svg id="holexpLogo" xmlns="http://www.w3.org/2000/svg" width="214" height="63.239" viewBox="0 0 214 63.239">
                 <defs>
                     <style>.a{fill:#7bb7a7;}.b{fill:#00936e;}.c{fill:#008c7e;}.d,.h{fill:#14d9c5;}.e{fill:#14d9b1;}.f{fill:#032825;}.g{fill:#30ffeb;}.h{opacity:0.8;}</style>
@@ -95,35 +92,43 @@
                 <object data="./assets/logo.svg" type="image/svg+xml" title="logo"></object>
             -->
             <div id="quickLinks">
-                <ul>
-                    <!--English-->
-                    <li lang="en" onclick="scrollToDiv('projects')">Mission</li>
-                    <li lang="en" onclick="scrollToDiv('offerings')">Vision</li>
-                    <li lang="en" onclick="scrollToDiv('aboutUs')">About</li>
-                    <li lang="en" onclick="scrollToDiv('signUp')">Login</li>
-                    <!--Arabic-->
-                    <li lang="ar" onclick="scrollToDiv('projects')">المهمة</li>
-                    <li lang="ar" onclick="scrollToDiv('offerings')">الرؤية</li>
-                    <li lang="ar" onclick="scrollToDiv('aboutUs')">التعريف بنا</li>
-                    <li lang="ar" onclick="scrollToDiv('signUp')">تسجيل الدخول</li>
+                <!--English-->
+                <ul class="english">
+                    <li onclick="scrollToDiv('projects')">Mission</li>
+                    <li onclick="scrollToDiv('offerings')">Vision</li>
+                    <li onclick="scrollToDiv('aboutUs')">About</li>
+                    <li onclick="scrollToDiv('signUp')">Login</li>
+                </ul>
+                <!--Arabic-->
+                <ul class="arabic">
+                    <li onclick="scrollToDiv('projects')">المهمة</li>
+                    <li onclick="scrollToDiv('offerings')">الرؤية</li>
+                    <li onclick="scrollToDiv('aboutUs')">التعريف بنا</li>
+                    <li onclick="scrollToDiv('signUp')">تسجيل الدخول</li>
                 </ul>
             </div>
         </div>
         <div id="introductoryInfo">
             <div id="infoText">
                 <div id="containerInfo">
-                    <h1 lang="en">Who said coding<br/>is difficult?</h1>
-                    <h1 style="text-align: right;" lang="ar">من قال أن<br/>البرمجة صعبة؟</h1>
-                    <h6 lang="en">With Holepx, it's never been easier!</h6>
-                    <h6 style="text-align: right;" lang="ar">!لن تكون أسهل من ذلك Holepx مع</h6>
-                    <button lang="en" id="checkItOut">
-                        <p lang="en">Check it out</p>
-                        <span lang="en" class="material-icons-outlined">expand_more</span>
-                    </button>
-                    <button lang="ar" id="checkItOut" style="float: right;">
-                        <span lang="ar" class="material-icons-outlined">expand_more</span>
-                        <p style="text-align: right;" lang="ar">إكتشف بنفسك</p>
-                    </button>
+                    <h1 class="english">Who said coding<br/>is difficult?</h1>
+                    <h1 style="text-align: right;" class="arabic">من قال أن<br/>البرمجة صعبة؟</h1>
+                    <h6 class="english">With Holepx, it's never been easier!</h6>
+                    <h6 style="text-align: right;" class="arabic">!لن تكون أسهل من ذلك Holepx مع</h6>
+                    
+                    <div class="english">
+                        <button class="check">
+                            <p>Check it out</p>
+                            <span class="material-icons-outlined">expand_more</span>
+                        </button>
+                    </div>
+
+                    <div class="arabic">
+                        <button class="check" style="float: right;">
+                            <span class="material-icons-outlined">expand_more</span>
+                            <p style="text-align: right;">إكتشف بنفسك</p>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div id="MlRobot">
@@ -139,29 +144,26 @@
     <div id="features">
         <div class="feature" onclick="scrollToDiv('projects')" style="grid-area: featuresDiv1;">
             <img src="./assets/Projects.png" alt="">
-            <p lang="en">Mission</p>
-            <p lang="ar">المهمة</p>
+            <p class="english">Mission</p>
+            <p class="arabic">المهمة</p>
             <span class="material-icons" style="background: linear-gradient(120deg, #ED7FA0, #F7CB6A);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('offerings')" style="grid-area: featuresDiv2;">
             <img src="./assets/Offerings.png" alt="">
-            <p lang="en">Vision</p>
-            <p lang="ar">الرؤية</p>
+            <p class="english">Vision</p>
+            <p class="arabic">الرؤية</p>
             <span class="material-icons" style="background: linear-gradient(120deg, #3E98F5, #6ADDD7);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('aboutUs')" style="grid-area: featuresDiv3;">
             <img src="./assets/About_Us.png" alt="">
-            <p lang="en">About</p>
-            <p lang="ar">التعريف بنا</p>
+            <p class="english">About</p>
+            <p class="arabic">التعريف بنا</p>
             <span class="material-icons" style="background: linear-gradient(140deg, #6ADDD7, #3E98F5);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('signUp')" style="grid-area: featuresDiv4;">
             <img src="./assets/Sign_Up.png" alt="">
-            <p lang="en">Login</p>
-            <p lang="ar">تسجيل الدخول</p>
-            <!--
-                <span class="material-icons" style="background: linear-gradient(100deg, #F7CB6A, #ED7FA0);" >expand_more</span>
-            -->
+            <p class="english">Login</p>
+            <p class="arabic">تسجيل الدخول</p>
             <span class="material-icons" style="--BGValue: linear-gradient(100deg, #F7CB6A, #ED7FA0);" >expand_more</span>
         </div> 
     </div>
@@ -172,10 +174,16 @@
         <div id="projectsInfo">
             <div id="infoTextProj">
                 <!--English-->
-                <h1 lang="en">Mission</h1>
-                <p lang="en">“If you can’t explain it to a 6-year-old,
-                    you don’t understand it yourself.” <br> -Albert Einstein
-                    <br><br>
+                <h1 class="english">Mission</h1>
+                <p class="english">“If you can’t explain it to a 6-year-old,
+                    you don’t understand it yourself.”
+                </p>
+                    
+                <p class="english" style="float: right; margin: 0; margin-right: 32px;">-Albert Einstein</p>
+
+                <br><br>
+
+                <p class="english">
                     Holexp abstracts all software syntax so that
                     learners use plain text in coding and build
                     up their confidence, engagement and skills 
@@ -185,10 +193,21 @@
                     automation projects using its open source
                     hardware kit. 
                 </p>
+                </p>
                 <!--Arabic-->
-                <h1 style="text-align: right;" lang="ar">المهمة</h1>
-                <p style="text-align: right;" lang="ar">“إذا لا تستطيع أن تشرحه لطفل في السادسة من عمره، إذاً أنت شخصياً لم تفهمه” <br> ألبرت أينشتاين-
-                    <br><br>
+                <h1 style="text-align: right;" class="arabic">المهمة</h1>
+                <p style="text-align: right; margin: 0;" class="arabic">“إذا لا تستطيع أن تشرحه لطفل في السادسة من عمره، إذاً أنت شخصياً لم تفهمه” <br>
+                </p>
+
+                <br>
+
+                <p class="arabic" style="margin: 0; margin-left: 32px;">
+                    ألبرت أينشتاين-
+                </p>
+
+                <br><br>
+
+                <p style="text-align: right; margin: 0;" class="arabic">
                     يختصر كل بناء جمل البرامج بحيث يستطيع التلميذ إستخدام نصاً بسيطاً في البرمجة و بناء ثقتهم بنفسهم، التزامهم و مهاراتهم عبر منصتنا الفريدة من نوعها.
                 </p>
 
@@ -204,12 +223,12 @@
     <div id="offerings" style="background-image: url('./assets/offerings_bg.svg');">
         <div id="leftOffering">
             <div class="offeringsDiv" id="offeringsTitle">
-                <h1 lang="en">Vision</h1>
-                <h1 lang="ar">الرؤية</h1>
+                <h1 class="english">Vision</h1>
+                <h1 class="arabic">الرؤية</h1>
             </div>
             <div class="offeringsDiv" id="offeringsText">
                 <!--English-->
-                <p lang="en">
+                <p class="english">
                     With Holexp, coding has never been easier!
                     Holexp simplifies what is considered difficult
                     in coding and hardware design. Programming and
@@ -219,7 +238,7 @@
                     will take care of the rest.
                 </p>
                 <!--Arabic-->
-                <p lang="ar">
+                <p class="arabic">
                     Holexp مع,
                     لن تكون تكن المبرمجة أسهل من ذالك
                 </p>
@@ -255,16 +274,16 @@
     </div>
 
     <div id="aboutUsHeader" style="text-align: center;">
-        <h1 lang="en">About Us</h1>
-        <h1 lang="ar">التعريف بنا</h1>
+        <h1 class="english">About Us</h1>
+        <h1 class="arabic">التعريف بنا</h1>
     </div>
     <div id="aboutUs">
         <div class="aboutUsDiv" id="Holexp" style="grid-area: Holexp;">
             <img src="./assets/Holexp.png" alt="">
             <div class="aboutUsText">
                 <!--English-->
-                <h3 lang="en">Holexp</h3>
-                <p lang="en">Holexp brings innovation in both the form and
+                <h3 class="english">Holexp</h3>
+                <p class="english">Holexp brings innovation in both the form and
                     the content of teaching programming and electronics.
                     <br><br>
                     Different from traditional ways of learning, Holexp
@@ -273,15 +292,15 @@
                     
                 </p>
                 <!--Arabic-->
-                <h3 lang="ar" style="text-align: right;">فريقنا</h3>
-                <p lang="ar" style="text-align: right;">
+                <h3 class="arabic" style="text-align: right;">فريقنا</h3>
+                <p class="arabic" style="text-align: right;">
                     الفريق المؤسس هو مجموعة نشيطة تحتوي خبراء بالذكاء الاصطناعي، البرمجة، التشغيل الآلي و الإدارة
                     <br><br>
                     هل أنت مهتم بالإنضمام أو الاستفسار عن ؟ يمكنك التصال بنا على
                     <br><br>
                 </p>
                 <br><br><br><br><br>
-                <span lang="ar" id="emailButton">
+                <span class="arabic" id="emailButton">
                     <a href="mailto:support@holexp.com">
                         <span id="emailIcon" class="material-icons">email</span>
                         <p>support@holexp.com</p>
@@ -293,8 +312,8 @@
             <img src="./assets/ourVision_2x.png" alt="">
             <div class="aboutUsText">
                 <!--English-->
-                <h3 lang="en">A community</h3>
-                <p lang="en">It is an online platform that can
+                <h3 class="english">A community</h3>
+                <p class="english">It is an online platform that can
                    easily scale up to formal and informal
                    education circles through a rich suite
                    of video tutorials and a chatbot for
@@ -308,8 +327,8 @@
                    for the STEM community to embrace.
                 </p>
                 <!--Arabic-->
-                <h3 lang="ar" style="text-align: right;">مجتمع</h3>
-                <p lang="ar" style="text-align: right;">
+                <h3 class="arabic" style="text-align: right;">مجتمع</h3>
+                <p class="arabic" style="text-align: right;">
                    ا نها منصة عبرة الانترنت سهلة  التأقلم مع 
                    دوائر التعليم الرسمية و غير الرسمية عبرة
                    مجموعات غنية من الفيديوهات التعليمية 
@@ -325,8 +344,8 @@
             <img src="./assets/ourMission_2x.png" alt="">
             <div class="aboutUsText">
                 <!--English-->
-                <h3 lang="en">Our team</h3>
-                <p lang="en">
+                <h3 class="english">Our team</h3>
+                <p class="english">
                     The founding team of Holexp is an
                     energetic group of AI expert,
                     software, automation and management
@@ -335,7 +354,7 @@
                     Interested to join or inquire about Holexp, reach us at:
                     <br><br><br><br><br>
                 </p>
-                <span lang="en" id="emailButton">
+                <span class="english" id="emailButton">
                     <a href="mailto:support@holexp.com">
                         <span id="emailIcon" class="material-icons">email</span>
                         <p>support@holexp.com</p>
@@ -343,8 +362,8 @@
                 </span>
                 
                 <!--Arabic-->
-                <h3 lang="ar" style="text-align: right;">Holexp</h3>
-                <p style="text-align: right;" lang="ar">
+                <h3 class="arabic" style="text-align: right;">Holexp</h3>
+                <p style="text-align: right;" class="arabic">
                     يطور طريقة التعليم والمحتوى في 
                     Holexp
                     .البرمجة وللكترونية
@@ -358,66 +377,69 @@
     <div id="JoinSignDiv">
         <div id="JoinTheProgramMainDiv">
             <div id="imageDiv">
-                <img src="./assets/SIGN_UP illustration_2x.png" alt="Sign up illustration">
+                <img id="signUpIllustration" src="./assets/SIGN_UP illustration_2x.png" alt="Sign up illustration">
             </div>
             <div id="JoinTheProgramDiv" class="signLogDivs">
                 <div class="JoinSignContainer">
-                    <h1 lang="en" class="logSignHeader">Join the program!</h1>
-                    <h1 lang="ar" class="logSignHeader" style="text-align: right;">!انضم إلى البرنامج</h1>
+                    <h1 class="logSignHeader english">Join the program!</h1>
+                    <h1 class="logSignHeader arabic" style="text-align: right;">!انضم إلى البرنامج</h1>
                     <br>
                     <form action="">
                         <fieldset class="fieldTag">
-                            <legend lang="en">Email address</legend>
-                            <legend lang="ar" style="text-align: right;">عنوان البريد الإلكتروني</legend>
+                            <legend class="english">Email address</legend>
+                            <legend class="arabic" style="text-align: right;">عنوان البريد الإلكتروني</legend>
                             <input type="email" name="email" id="email">
                         </fieldset>
                         <fieldset class="fieldTag">
-                            <legend lang="en">Password</legend>
-                            <legend lang="ar" style="text-align: right;">كلمة السر</legend>
+                            <legend class="english">Password</legend>
+                            <legend class="arabic" style="text-align: right;">كلمة السر</legend>
                             <input type="password" name="password" id="password">
                         </fieldset>
                         <button class="submitButton" type="submit">
-                            <span lang="en">Sign Up</span>
-                            <span style="--Direction: translateX(4px);" lang="en" id="leftChev" style="font-size: 14pt;" class="material-icons">chevron_right</span>
-                            <span style="--Direction: translateX(-4px);" lang="ar" id="rightChev" style="font-size: 14pt;" class="material-icons">chevron_left</span>
-                            <span lang="ar" style="text-align: right;">أفتح حساب</span>
+                            <span class="english">Sign Up</span>
+                            <span style="--Direction: translateX(4px);" id="leftChev" style="font-size: 14pt;" class="material-icons english">chevron_right</span>
+                            <span style="--Direction: translateX(-4px);" id="rightChev" style="font-size: 14pt;" class="material-icons arabic">chevron_left</span>
+                            <span class="arabic" style="text-align: right;">أفتح حساب</span>
                         </button>
                     </form>
-                    <button lang="en" class="noYesAccount accountExists">
+                    <button class="noYesAccount accountExists english">
                         <span>Already have an account?</span>
                     </button>
-                    <button lang="ar" class="noYesAccount accountExists" style="float: right;">
+                    <button class="noYesAccount accountExists arabic" style="float: right;">
                         <span>هل لديك حساب؟</span>
                     </button>
                 </div>
             </div>
             <div style="display: none;" id="SignInDiv" class="signLogDivs">
                 <div class="JoinSignContainer">
-                    <h1 lang="en" class="logSignHeader">Log back in!</h1>
-                    <h1 lang="ar" class="logSignHeader" style="text-align: right;">!تسجيل الدخول</h1>
+                    <h1 class="logSignHeader english">Log back in!</h1>
+                    <h1 class="logSignHeader arabic" style="text-align: right;">!تسجيل الدخول</h1>
                     <br>
                     <form action="">
                         <fieldset class="fieldTag">
-                            <legend lang="en">Email address</legend>
-                            <legend lang="ar" style="text-align: right;">عنوان البريد الإلكتروني</legend>
+                            <legend class="english">Email address</legend>
+                            <legend class="arabic" style="text-align: right;">عنوان البريد الإلكتروني</legend>
                             <input type="email" name="email" id="email">
                         </fieldset>
                         <fieldset class="fieldTag">
-                            <legend lang="en">Password</legend>
-                            <legend lang="ar" style="text-align: right;">كلمة السر</legend>
+                            <legend class="english">Password</legend>
+                            <legend class="arabic" style="text-align: right;">كلمة السر</legend>
                             <input type="password" name="password" id="password">
                         </fieldset>
+                        <button class="forgotPassword english" style="float: right;">
+                            <span>Forgot password?</span>
+                        </button>
                         <button class="submitButton" type="submit">
-                            <span lang="en">Log In</span>
-                            <span style="--Direction: translateX(4px);" lang="en" id="leftChev" style="font-size: 14pt;" class="material-icons">chevron_right</span>
-                            <span style="--Direction: translateX(-4px);" lang="ar" id="rightChev" style="font-size: 14pt;" class="material-icons">chevron_left</span>
-                            <span lang="ar" style="text-align: right;">تسجيل الدخول</span>
+                            <span class="english">Log In</span>
+                            <span style="--Direction: translateX(4px);" id="leftChev" style="font-size: 14pt;" class="material-icons english">chevron_right</span>
+                            <span style="--Direction: translateX(-4px);" id="rightChev" style="font-size: 14pt;" class="material-icons arabic">chevron_left</span>
+                            <span class="arabic" style="text-align: right;">تسجيل الدخول</span>
                         </button>
                     </form>
-                    <button lang="ar" class="noYesAccount noAccount" style="float: right;">
+                    <button class="noYesAccount noAccount arabic" style="float: right;">
                         <span>جديد هنا؟ قم بإنشاء حساب</span>
                     </button>
-                    <button lang="en" class="noYesAccount noAccount">
+                    <button class="noYesAccount noAccount english">
                         <span>New here? Sign up instead</span>
                     </button>
                 </div>
@@ -430,6 +452,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
 
+        $('.arabic').hide();
+
         var fanButton;
         var arabicLang = false;
 
@@ -438,64 +462,51 @@
             "Fan":     "url('./assets/fanOffering.png')"
         }
 
+        var checkItOutButtons;
+
         window.onload = function() {
 
-            
-            /*
-            fanButton = document.getElementById('fanButton');
-            fanButton.onclick =  function(){
-                fanButton.classList.add("fanButton-poweredOn");
-                fanButton.disabled = true;
-                document.getElementById('videoAnimation').play();
-
-                var lengthTimeout;
-                if(!arabicLang){
-                    lengthTimeout = 5000;
-                }else if (arabicLang){
-                    lengthTimeout = 10000;
-                }
-
-                var videoTimeout = window.setTimeout(function(){
-                    fanButton.classList.remove('fanButton-poweredOn');
-                    fanButton.disabled = false;
-                }, lengthTimeout);
-            }
-            */
+            checkItOutButtons = document.getElementsByClassName('check');
+            console.log(checkItOutButtons);
 
             var noAccounts = document.getElementsByClassName('noAccount');
             var accountExists = document.getElementsByClassName('accountExists');
 
             for (let i = 0 ; i < noAccounts.length ; i++){
                 noAccounts[i].onclick = function() {
+                    document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
                     document.getElementById('SignInDiv').style.display = "none";
                     document.getElementById('JoinTheProgramDiv').style.display = "";
                 }
             }
-
+            
             for (let i = 0 ; i < accountExists.length ; i++){
                 accountExists[i].onclick = function() {
+                    document.getElementById('signUpIllustration').src = "./assets/yellow_bot_1_2x.png";
                     document.getElementById('JoinTheProgramDiv').style.display = "none";
                     document.getElementById('SignInDiv').style.display = "";
                 }
             }
-            
-            document.getElementById("checkItOut").onclick = function() {
-                if(!document.getElementById("videoEmbed").classList.contains("videoEmbed-expanded")){
-                    document.getElementById('features').classList.add('featuresVidExpanded');
-                    setTimeout(function() {
-                        document.getElementById("videoEmbed").classList.add("videoEmbed-expanded");
-                        setTimeout(function () {
-                            document.getElementById("videoIframe").classList.add("videoIframe-expanded");
-                        },50);
-                    },250)
-                } else{
-                    document.getElementById('features').classList.remove('featuresVidExpanded');
-                    setTimeout(function() {
-                        document.getElementById("videoIframe").classList.remove("videoIframe-expanded");
-                        setTimeout(function () {
-                            document.getElementById("videoEmbed").classList.remove("videoEmbed-expanded");
-                        },300);
-                    },250)
+
+            for(let i = 0 ; i < checkItOutButtons.length ; i++){
+                checkItOutButtons[i].onclick = function() {
+                    if(!document.getElementById("videoEmbed").classList.contains("videoEmbed-expanded")){
+                        document.getElementById('features').classList.add('featuresVidExpanded');
+                        setTimeout(function() {
+                            document.getElementById("videoEmbed").classList.add("videoEmbed-expanded");
+                            setTimeout(function () {
+                                document.getElementById("videoIframe").classList.add("videoIframe-expanded");
+                            },50);
+                        },250)
+                    } else{
+                        document.getElementById('features').classList.remove('featuresVidExpanded');
+                        setTimeout(function() {
+                            document.getElementById("videoIframe").classList.remove("videoIframe-expanded");
+                            setTimeout(function () {
+                                document.getElementById("videoEmbed").classList.remove("videoEmbed-expanded");
+                            },300);
+                        },250)
+                    }
                 }
             }
 
@@ -530,20 +541,21 @@
             $('html, body').animate({
                 scrollTop: $(`#${targetDiv}`).offset().top
             },500);
-        }
-
-        $('[lang="ar"]').hide();
-        
+        }        
 
         $('#SwitchLang').click(function() {
             arabicLang = !arabicLang;
             if(arabicLang){
                 document.getElementById('videoAnimation').src = "./assets/ARABIC_fan_on_off.mp4";
+                $('.english').hide();
+                $('.arabic').show();
             }else{
                 document.getElementById('videoAnimation').src = "./assets/ENGLISH_fan_on_off_edited.mp4";
+                $('.arabic').hide();
+                $('.english').show();
             }
-            $('[lang="ar"]').toggle();
-            $('[lang="en"]').toggle();
+            //$('[lang="ar"]').toggle();
+            //$('[lang="en"]').toggle();
             videoTimeout.clearTimeout();
             window.clearTimeout(videoTimeout);
         });
