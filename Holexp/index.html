@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
+
+
 <head>
     <title>HOLEXP</title>
-    <meta lang="en" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="index.css">
@@ -16,63 +17,164 @@
 </head>
 
 <body>
+    <button id="SwitchLang">
+        <p lang="en">Switch Language</p>
+        <p lang="ar" style="font-size: 10pt;">تبديل اللغة</p>
+        <span class="material-icons">language</span>
+    </button>
+    
     <div id="landingDiv">
         <div id="navbar">
-            <object data="./assets/logo.svg" type="image/svg+xml" title="logo"></object>
+
+            <svg id="holexpLogo" xmlns="http://www.w3.org/2000/svg" width="214" height="63.239" viewBox="0 0 214 63.239">
+                <defs>
+                    <style>.a{fill:#7bb7a7;}.b{fill:#00936e;}.c{fill:#008c7e;}.d,.h{fill:#14d9c5;}.e{fill:#14d9b1;}.f{fill:#032825;}.g{fill:#30ffeb;}.h{opacity:0.8;}</style>
+                </defs>
+                <g transform="translate(-6283.319 4506.754)">
+                    <g id="" transform="translate(6283.319 -4506.754)">
+                        <path class="a" d="M6327.721-4465.379v42.257H6329v-37.135h3.841v28.171h1.281v-33.293Z" transform="translate(-6315.353 4476.903)"/>
+                        <path class="b" d="M6283.319-4426.641v40.925h90.619v-40.925Zm87.7,39.6a1.6,1.6,0,0,1-1.595-1.6,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6371.015-4387.044Zm0-38.268a1.6,1.6,0,0,1,1.595,1.595,1.6,1.6,0,0,1-1.595,1.595,1.6,1.6,0,0,1-1.595-1.595A1.6,1.6,0,0,1,6371.015-4425.312Zm-84.773,38.268a1.6,1.6,0,0,1-1.595-1.6,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6286.242-4387.044Zm0-38.268a1.6,1.6,0,0,1,1.595,1.595,1.6,1.6,0,0,1-1.595,1.595,1.6,1.6,0,0,1-1.595-1.595A1.6,1.6,0,0,1,6286.242-4425.312Z" transform="translate(-6283.319 4448.956)"/>
+                        <path class="c" d="M6283.319-4426.641v40.925h90.619v-40.925Zm2.923,39.6a1.6,1.6,0,0,1-1.595-1.6,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6286.242-4387.044Zm0-35.079a1.6,1.6,0,0,1-1.595-1.595,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6286.242-4422.123Zm83.668-2.744a1.59,1.59,0,0,1,1.1-.445,1.588,1.588,0,0,1,1.195.541,1.588,1.588,0,0,1,.4,1.054,1.589,1.589,0,0,1-.4,1.054,1.59,1.59,0,0,1-1.195.541,1.591,1.591,0,0,1-1.1-.445,1.593,1.593,0,0,1-.49-1.15A1.591,1.591,0,0,1,6369.911-4424.867Zm1.1,37.823a1.815,1.815,0,0,1-.232-.016,1.6,1.6,0,0,1-1.362-1.579,1.65,1.65,0,0,1,.022-.271,1.6,1.6,0,0,1,.468-.878,1.59,1.59,0,0,1,1.1-.445,1.59,1.59,0,0,1,1.195.541,1.584,1.584,0,0,1,.369.746,1.489,1.489,0,0,1,.031.308,1.592,1.592,0,0,1-.455,1.114A1.6,1.6,0,0,1,6371.015-4387.044Z" transform="translate(-6283.319 4448.956)"/>
+                        <path class="d" d="M6318.6-4426.641h-2.3v11.1l27.546,27.551v2.278h2.3v-3.229L6318.6-4416.5Z" transform="translate(-6307.111 4448.956)"/>
+                        <path class="d" d="M6352.285-4426.641h-2.3v6.373l27.551,27.556v7h2.3v-7.956l-27.551-27.551Z" transform="translate(-6331.416 4448.956)"/>
+                        <path class="d" d="M6389.9-4426.641h-2.3v2.539l27.546,27.551v10.835h2.309v-11.79l-27.556-27.554Z" transform="translate(-6358.551 4448.956)"/>
+                        <path class="d" d="M6463.666-4421.456a4.325,4.325,0,0,0,4.321-4.328,4.235,4.235,0,0,0-.086-.857h-8.482a4.27,4.27,0,0,0-.086.857A4.332,4.332,0,0,0,6463.666-4421.456Z" transform="translate(-6410.306 4448.956)"/>
+                        <path class="d" d="M6502.424-4419.578v-7.063h-2.3v7.063a4.318,4.318,0,0,0-3.178,4.156,4.332,4.332,0,0,0,4.332,4.328,4.326,4.326,0,0,0,4.326-4.328A4.315,4.315,0,0,0,6502.424-4419.578Z" transform="translate(-6437.441 4448.956)"/>
+                        <rect class="d" width="2.309" height="40.925" transform="translate(73.812 22.315)"/>
+                        <path class="e" d="M6588.857-4291.009a1.592,1.592,0,0,1-.455,1.114,1.6,1.6,0,0,1-1.14.481,1.809,1.809,0,0,1-.232-.016,1.6,1.6,0,0,1-1.362-1.579,1.65,1.65,0,0,1,.022-.271,4.306,4.306,0,0,0-2.636,3.194h7.131v-2.413a4.3,4.3,0,0,0-1.359-.818A1.456,1.456,0,0,1,6588.857-4291.009Z" transform="translate(-6499.566 4351.325)"/>
+                        <path class="d" d="M6596.5-4379.392v-32.97a1.59,1.59,0,0,1-1.195.541,1.591,1.591,0,0,1-1.1-.445v32.779a1.59,1.59,0,0,1,1.1-.445A1.59,1.59,0,0,1,6596.5-4379.392Z" transform="translate(-6507.605 4438.654)"/>
+                        <path class="e" d="M6594.2-4426.641v1.774a1.59,1.59,0,0,1,1.1-.445,1.588,1.588,0,0,1,1.195.541v-.713h1.728v-1.156Z" transform="translate(-6507.605 4448.956)"/>
+                        <path class="f" d="M6287.58-4424.787a2.41,2.41,0,0,0-2.407,2.407,2.41,2.41,0,0,0,2.407,2.407,2.41,2.41,0,0,0,2.407-2.407A2.41,2.41,0,0,0,6287.58-4424.787Zm0,4a1.6,1.6,0,0,1-1.595-1.595,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.6,1.595A1.6,1.6,0,0,1,6287.58-4420.786Z" transform="translate(-6284.656 4447.618)"/>
+                        <rect class="f" width="78.993" height="29.232" transform="translate(5.847 28.161)"/>
+                        <rect class="g" width="70.157" height="20.462" transform="translate(10.231 32.546)"/>
+                        <path class="f" d="M6591.927-4424.787a2.41,2.41,0,0,0-2.407,2.407,2.41,2.41,0,0,0,2.407,2.407,2.41,2.41,0,0,0,2.407-2.407A2.41,2.41,0,0,0,6591.927-4424.787Zm0,4a1.6,1.6,0,0,1-1.595-1.595,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6591.927-4420.786Z" transform="translate(-6504.231 4447.618)"/>
+                        <path class="f" d="M6591.927-4298.85a2.41,2.41,0,0,0-2.407,2.407,2.41,2.41,0,0,0,2.407,2.407,2.41,2.41,0,0,0,2.407-2.407A2.41,2.41,0,0,0,6591.927-4298.85Zm0,4a1.6,1.6,0,0,1-1.595-1.595,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.595,1.595A1.6,1.6,0,0,1,6591.927-4294.849Z" transform="translate(-6504.231 4356.76)"/>
+                        <path class="f" d="M6287.58-4298.85a2.41,2.41,0,0,0-2.407,2.407,2.41,2.41,0,0,0,2.407,2.407,2.409,2.409,0,0,0,2.407-2.407A2.41,2.41,0,0,0,6287.58-4298.85Zm0,4a1.6,1.6,0,0,1-1.595-1.595,1.6,1.6,0,0,1,1.595-1.595,1.6,1.6,0,0,1,1.6,1.595A1.6,1.6,0,0,1,6287.58-4294.849Z" transform="translate(-6284.656 4356.76)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(17.539 44.239)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(20.463 41.315)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(23.386 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(26.309 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(29.232 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(32.155 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(35.079 41.315)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(38.002 44.239)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(49.695 44.239)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(52.618 41.315)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(55.541 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(58.464 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(61.387 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(64.311 38.392)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(67.234 41.315)"/>
+                        <rect class="f" width="2.923" height="2.923" transform="translate(70.157 44.239)"/>
+                        <path class="h" d="M6326.979-4490.107h-.245v-10.884a5.763,5.763,0,0,0-5.763-5.762h0a5.763,5.763,0,0,0-5.762,5.762v10.884h-.245a1.036,1.036,0,0,0-1.036,1.036v1.526h14.085v-1.526A1.036,1.036,0,0,0,6326.979-4490.107Z" transform="translate(-6305.403 4506.754)"/>
+                    </g>
+                    <g transform="translate(6386.523 -4475.985)">
+                        <g id="letterH" style="--Order:0s">
+                            <path class="f" d="M6673.115-4371.49l-8.059.387-.064-7.446h-3.707l-.226,7.06h-7.221l.612-22.662,7.672.354-.483,11.573h3.578l.033-12.443,7.35.193Z" transform="translate(-6653.838 4395.12)"/>
+                        </g>
+                        <g id="letterO" style="--Order:0.05s">
+                            <path class="f" d="M6747.046-4379.028a11.691,11.691,0,0,1-.338,2.829,11.071,11.071,0,0,1-.975,2.554,10.589,10.589,0,0,1-1.547,2.185,9.85,9.85,0,0,1-2.047,1.7,9.981,9.981,0,0,1-2.474,1.1,9.958,9.958,0,0,1-2.837.4,10.133,10.133,0,0,1-2.764-.371,10.506,10.506,0,0,1-2.458-1.04,9.887,9.887,0,0,1-2.071-1.612,10.056,10.056,0,0,1-1.58-2.1,10.811,10.811,0,0,1-1.016-2.475,10.367,10.367,0,0,1-.362-2.756,11.224,11.224,0,0,1,.338-2.748,11.152,11.152,0,0,1,.975-2.539,10.949,10.949,0,0,1,1.539-2.191,10.143,10.143,0,0,1,2.023-1.725,9.723,9.723,0,0,1,2.425-1.128,9.3,9.3,0,0,1,2.756-.4,12.007,12.007,0,0,1,4.263.726,9.249,9.249,0,0,1,3.288,2.071,9.287,9.287,0,0,1,2.112,3.256A11.6,11.6,0,0,1,6747.046-4379.028Zm-7.156.419a4.551,4.551,0,0,0-.2-1.346,3.709,3.709,0,0,0-.589-1.161,3.022,3.022,0,0,0-.959-.822,2.684,2.684,0,0,0-1.313-.314,3.215,3.215,0,0,0-1.354.273,3.1,3.1,0,0,0-1.023.75,3.278,3.278,0,0,0-.653,1.112,4,4,0,0,0-.226,1.346,4.913,4.913,0,0,0,.193,1.354,4.024,4.024,0,0,0,.58,1.225,3.09,3.09,0,0,0,.959.886,2.564,2.564,0,0,0,1.33.338,3.037,3.037,0,0,0,1.362-.3,3.087,3.087,0,0,0,1.024-.806,3.692,3.692,0,0,0,.645-1.169A4.205,4.205,0,0,0,6739.89-4378.609Z" transform="translate(-6706.316 4391.279)"/>
+                        </g>
+                        <g id="letterL" style="--Order:0.1s">
+                            <path class="f" d="M6818.077-4381.1l-.677,7.157-13.571,1.063q.1-5.625.218-11.186t.3-11.186h8.381q-.371,3.53-.709,7.052t-.484,7.1q.758.033,1.5.032h1.5q.9,0,1.773-.016T6818.077-4381.1Z" transform="translate(-6762.05 4395.537)"/>
+                        </g>
+                        <g id="letterE" style="--Order:0.15s">
+                            <path class="f" d="M6872.673-4394.9q-.1,1.515-.177,3t-.209,3l-6.834.355-.161,2.031h4.8l-.354,5-4.835.161-.161,2.354h6.834q-.1,1.773-.2,3.521t-.186,3.506l-13.893.322.515-23.242Z" transform="translate(-6800.625 4395.286)"/>
+                        </g>
+                        <g id="letterX" style="--Order:0.2s">
+                            <path class="f" d="M6929.867-4394.922l-6.286,10.928,5.352,9.509-6.737,2.1-2.9-6.577-3.417,6.608-6.963-2.514,5.931-9.349-5.416-9.832,7.382-1.773,2.643,6.479,2.8-6.479Z" transform="translate(-6837.865 4395.955)"/>
+                        </g>
+                        <g id="letterP" style="--Order:0.25s">
+                            <path class="f" d="M7003.1-4388.166a7.651,7.651,0,0,1-.467,2.772,6.764,6.764,0,0,1-1.281,2.112,7.741,7.741,0,0,1-1.91,1.531,11.922,11.922,0,0,1-2.345,1.023,15.725,15.725,0,0,1-2.586.58,20.981,20.981,0,0,1-2.628.2v7.511h-7.511q0-3.691.016-7.35t.048-7.382q.032-1.966.016-3.933t.081-3.965a29.921,29.921,0,0,1,4.126-.918,28.957,28.957,0,0,1,4.255-.307,15.473,15.473,0,0,1,2.482.2,12.055,12.055,0,0,1,2.377.637,10.579,10.579,0,0,1,2.111,1.088,7.257,7.257,0,0,1,1.685,1.555,7.242,7.242,0,0,1,1.12,2.055A7.666,7.666,0,0,1,7003.1-4388.166Zm-7.156.548a2.119,2.119,0,0,0-.637-1.636,2.338,2.338,0,0,0-1.652-.588,4.564,4.564,0,0,0-.7.057q-.363.056-.685.137l-.193,4.707a3.075,3.075,0,0,0,.435.032h.436a3.3,3.3,0,0,0,1.12-.193,3,3,0,0,0,.959-.557,2.8,2.8,0,0,0,.669-.854A2.4,2.4,0,0,0,6995.944-4387.617Z" transform="translate(-6892.305 4396.289)"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            
+            <!--
+                <object data="./assets/logo.svg" type="image/svg+xml" title="logo"></object>
+            -->
             <div id="quickLinks">
                 <ul>
-                    <li onclick="scrollToDiv('projects')">Mission</li>
-                    <li onclick="scrollToDiv('offerings')">Vision</li>
-                    <li onclick="scrollToDiv('aboutUs')">About</li>
-                    <li onclick="scrollToDiv('signUp')">Login</li>
+                    <!--English-->
+                    <li lang="en" onclick="scrollToDiv('projects')">Mission</li>
+                    <li lang="en" onclick="scrollToDiv('offerings')">Vision</li>
+                    <li lang="en" onclick="scrollToDiv('aboutUs')">About</li>
+                    <li lang="en" onclick="scrollToDiv('signUp')">Login</li>
+                    <!--Arabic-->
+                    <li lang="ar" onclick="scrollToDiv('projects')">المهمة</li>
+                    <li lang="ar" onclick="scrollToDiv('offerings')">الرؤية</li>
+                    <li lang="ar" onclick="scrollToDiv('aboutUs')">التعريف بنا</li>
+                    <li lang="ar" onclick="scrollToDiv('signUp')">تسجيل الدخول</li>
                 </ul>
             </div>
         </div>
         <div id="introductoryInfo">
             <div id="infoText">
-                <h1>Who said coding<br/>is difficult?</h1>
-                <h6>With Holepx, it's never been easier!</h6>
-                <button id="checkItOut">
-                    <p>Check it out</p>
-                    <span class="material-icons-outlined">chevron_right</span>
-                </button>
+                <div id="containerInfo">
+                    <h1 lang="en">Who said coding<br/>is difficult?</h1>
+                    <h1 style="text-align: right;" lang="ar">من قال أن<br/>البرمجة صعبة؟</h1>
+                    <h6 lang="en">With Holepx, it's never been easier!</h6>
+                    <h6 style="text-align: right;" lang="ar">!لن تكون أسهل من ذلك Holepx مع</h6>
+                    <button lang="en" id="checkItOut">
+                        <p lang="en">Check it out</p>
+                        <span lang="en" class="material-icons-outlined">expand_more</span>
+                    </button>
+                    <button lang="ar" id="checkItOut" style="float: right;">
+                        <span lang="ar" class="material-icons-outlined">expand_more</span>
+                        <p style="text-align: right;" lang="ar">إكتشف بنفسك</p>
+                    </button>
+                </div>
             </div>
-            <img src="./assets/Asset_38.png" alt="Holexp logo">
+            <div id="MlRobot">
+                <img src="./assets/HOME_illustration_2x.png" alt="ML Robot">
+            </div>
         </div>
-        <div id="YTWrapper">
-            <div id="videoEmbed" class="videoEmbed videoEmbed-collapsed">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_gdkcaH6_UQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+    </div>
+    <div id="YTWrapper">
+        <div id="videoEmbed" class="videoEmbed videoEmbed-collapsed">
+            <iframe class="videoIframe" id="videoIframe" width="100%" height="100%" src="https://www.youtube.com/embed/_gdkcaH6_UQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
     <div id="features">
         <div class="feature" onclick="scrollToDiv('projects')" style="grid-area: featuresDiv1;">
             <img src="./assets/Projects.png" alt="">
-            <p>Mission</p>
-            <span class="material-icons">expand_more</span>
+            <p lang="en">Mission</p>
+            <p lang="ar">المهمة</p>
+            <span class="material-icons" style="background: linear-gradient(120deg, #ED7FA0, #F7CB6A);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('offerings')" style="grid-area: featuresDiv2;">
             <img src="./assets/Offerings.png" alt="">
-            <p>Vision</p>
-            <span class="material-icons">expand_more</span>
+            <p lang="en">Vision</p>
+            <p lang="ar">الرؤية</p>
+            <span class="material-icons" style="background: linear-gradient(120deg, #3E98F5, #6ADDD7);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('aboutUs')" style="grid-area: featuresDiv3;">
             <img src="./assets/About_Us.png" alt="">
-            <p>About</p>
-            <span class="material-icons">expand_more</span>
+            <p lang="en">About</p>
+            <p lang="ar">التعريف بنا</p>
+            <span class="material-icons" style="background: linear-gradient(140deg, #6ADDD7, #3E98F5);" >expand_more</span>
         </div> 
         <div class="feature" onclick="scrollToDiv('signUp')" style="grid-area: featuresDiv4;">
             <img src="./assets/Sign_Up.png" alt="">
-            <p>Login</p>
-            <span class="material-icons">expand_more</span>
+            <p lang="en">Login</p>
+            <p lang="ar">تسجيل الدخول</p>
+            <!--
+                <span class="material-icons" style="background: linear-gradient(100deg, #F7CB6A, #ED7FA0);" >expand_more</span>
+            -->
+            <span class="material-icons" style="--BGValue: linear-gradient(100deg, #F7CB6A, #ED7FA0);" >expand_more</span>
         </div> 
     </div>
     <div id="projects">
+        <div id="projectsAnimation">
+            <video autoplay loop id="videoAnimation" src="./assets/ENGLISH_fan_on_off.mp4"></video>
+        </div>
         <div id="projectsInfo">
             <div id="infoTextProj">
-                <h1>Mission</h1>
-                <p>“If you can’t explain it to a 6-year-old,
-                     you don’t understand it yourself.” <br> -Albert Einstein
+                <!--English-->
+                <h1 lang="en">Mission</h1>
+                <p lang="en">“If you can’t explain it to a 6-year-old,
+                    you don’t understand it yourself.” <br> -Albert Einstein
                     <br><br>
                     Holexp abstracts all software syntax so that
                     learners use plain text in coding and build
@@ -83,23 +185,58 @@
                     automation projects using its open source
                     hardware kit. 
                 </p>
+                <!--Arabic-->
+                <h1 style="text-align: right;" lang="ar">المهمة</h1>
+                <p style="text-align: right;" lang="ar">“إذا لا تستطيع أن تشرحه لطفل في السادسة من عمره، إذاً أنت شخصياً لم تفهمه” <br> ألبرت أينشتاين-
+                    <br><br>
+                    يختصر كل بناء جمل البرامج بحيث يستطيع التلميذ إستخدام نصاً بسيطاً في البرمجة و بناء ثقتهم بنفسهم، التزامهم و مهاراتهم عبر منصتنا الفريدة من نوعها.
+                </p>
+
+                <!--
+                    <button id="fanButton" style="margin: auto;" class="fanButton">
+                        <span class="material-icons">power_settings_new</span>
+                    </button>
+                -->
+
             </div>
         </div>
     </div>
-    <div id="offerings" style="background-image: url('./assets/arduinoOffering.png');">
-        <div class="offeringsDiv" id="offeringsText">
-            <p>
-                With Holexp, coding has never been easier!
-                Holexp simplifies what is considered difficult
-                in coding and hardware design. Programming and
-                electronics is now for all: youth and anyone 
-                who have missed out on programming or electronics.
-                Write it in your own language and Holexp
-                will take care of the rest.
-            </p>
+    <div id="offerings" style="background-image: url('./assets/offerings_bg.svg');">
+        <div id="leftOffering">
+            <div class="offeringsDiv" id="offeringsTitle">
+                <h1 lang="en">Vision</h1>
+                <h1 lang="ar">الرؤية</h1>
+            </div>
+            <div class="offeringsDiv" id="offeringsText">
+                <!--English-->
+                <p lang="en">
+                    With Holexp, coding has never been easier!
+                    Holexp simplifies what is considered difficult
+                    in coding and hardware design. Programming and
+                    electronics is now for all: youth and anyone 
+                    who have missed out on programming or electronics.
+                    Write it in your own language and Holexp
+                    will take care of the rest.
+                </p>
+                <!--Arabic-->
+                <p lang="ar">
+                    Holexp مع,
+                    لن تكون تكن المبرمجة أسهل من ذالك
+                </p>
+            </div>
         </div>
-        <div class="offeringsDiv" id="offeringsTitle">
-            <h1>Vision</h1>
+        <div id="rightOffering">
+            <div id="contentScroll">
+                <button>
+                    <span id="switchItemLeft" class="itemSwitch material-icons">chevron_left</span>
+                </button>
+                <div id="textItemDiv">
+                    <h1 id="textItem" style="transform: translateX(0px);" >Arduino &nbsp &nbsp &nbsp Fan</h1>
+                </div>
+                <button>
+                    <span id="switchItemRight" class="itemSwitch material-icons">chevron_right</span>
+                </button>
+            </div>
         </div>
         <!--
         <div class="offeringsDiv" id="offeringsList">
@@ -118,14 +255,16 @@
     </div>
 
     <div id="aboutUsHeader" style="text-align: center;">
-        <h1>About Us</h1>
+        <h1 lang="en">About Us</h1>
+        <h1 lang="ar">التعريف بنا</h1>
     </div>
     <div id="aboutUs">
         <div class="aboutUsDiv" id="Holexp" style="grid-area: Holexp;">
             <img src="./assets/Holexp.png" alt="">
             <div class="aboutUsText">
-                <h3>Holexp</h3>
-                <p>Holexp brings innovation in both the form and
+                <!--English-->
+                <h3 lang="en">Holexp</h3>
+                <p lang="en">Holexp brings innovation in both the form and
                     the content of teaching programming and electronics.
                     <br><br>
                     Different from traditional ways of learning, Holexp
@@ -133,13 +272,29 @@
                     and sets them on a path of lifelong learning. 
                     
                 </p>
+                <!--Arabic-->
+                <h3 lang="ar" style="text-align: right;">فريقنا</h3>
+                <p lang="ar" style="text-align: right;">
+                    الفريق المؤسس هو مجموعة نشيطة تحتوي خبراء بالذكاء الاصطناعي، البرمجة، التشغيل الآلي و الإدارة
+                    <br><br>
+                    هل أنت مهتم بالإنضمام أو الاستفسار عن ؟ يمكنك التصال بنا على
+                    <br><br>
+                </p>
+                <br><br><br><br><br>
+                <span lang="ar" id="emailButton">
+                    <a href="mailto:support@holexp.com">
+                        <span id="emailIcon" class="material-icons">email</span>
+                        <p>support@holexp.com</p>
+                    </a>
+                </span>
             </div>
         </div>
         <div class="aboutUsDiv" id="ourVision" style="grid-area: ourVision;">
             <img src="./assets/ourVision_2x.png" alt="">
             <div class="aboutUsText">
-                <h3>A community</h3>
-                <p>It is an online platform that can
+                <!--English-->
+                <h3 lang="en">A community</h3>
+                <p lang="en">It is an online platform that can
                    easily scale up to formal and informal
                    education circles through a rich suite
                    of video tutorials and a chatbot for
@@ -152,41 +307,218 @@
                    and reliable open-source hardware ecosystem
                    for the STEM community to embrace.
                 </p>
+                <!--Arabic-->
+                <h3 lang="ar" style="text-align: right;">مجتمع</h3>
+                <p lang="ar" style="text-align: right;">
+                   ا نها منصة عبرة الانترنت سهلة  التأقلم مع 
+                   دوائر التعليم الرسمية و غير الرسمية عبرة
+                   مجموعات غنية من الفيديوهات التعليمية 
+                   و روبوت الدردشة للمساعدة 
+                   <br><br>
+                   بفضل الواجهة الخفيفة،  يحتاج  الحد الأدنى الدنا من موارد الحوسبة  
+                   <br><br>
+                   
+                </p>
             </div>
         </div>
         <div class="aboutUsDiv" id="ourMission" style="grid-area: ourMission;">
             <img src="./assets/ourMission_2x.png" alt="">
             <div class="aboutUsText">
-                <h3>Our team</h3>
-                <p>The founding team of Holexp is an
-                   energetic group of AI expert,
-                   software, automation and management
-                   looking to grow. 
-                   <br><br>
-                   Interested to join or inquire about Holexp, reach us at:
-                   <br><br>
-                   support@holexp.com
+                <!--English-->
+                <h3 lang="en">Our team</h3>
+                <p lang="en">
+                    The founding team of Holexp is an
+                    energetic group of AI expert,
+                    software, automation and management
+                    looking to grow. 
+                    <br><br>
+                    Interested to join or inquire about Holexp, reach us at:
+                    <br><br><br><br><br>
+                </p>
+                <span lang="en" id="emailButton">
+                    <a href="mailto:support@holexp.com">
+                        <span id="emailIcon" class="material-icons">email</span>
+                        <p>support@holexp.com</p>
+                    </a>
+                </span>
+                
+                <!--Arabic-->
+                <h3 lang="ar" style="text-align: right;">Holexp</h3>
+                <p style="text-align: right;" lang="ar">
+                    يطور طريقة التعليم والمحتوى في 
+                    Holexp
+                    .البرمجة وللكترونية
+                    <br><br>
+                    بعيداً عن طرق التعلم  التقليدية فالتعلم، يجذب الشباب في الفترة المبكرة في دراستهم و يضعهم عل مسار التعلم مدى الحياة
                 </p>
             </div>
         </div>
     </div>
 
+    <div id="JoinSignDiv">
+        <div id="JoinTheProgramMainDiv">
+            <div id="imageDiv">
+                <img src="./assets/SIGN_UP illustration_2x.png" alt="Sign up illustration">
+            </div>
+            <div id="JoinTheProgramDiv" class="signLogDivs">
+                <div class="JoinSignContainer">
+                    <h1 lang="en" class="logSignHeader">Join the program!</h1>
+                    <h1 lang="ar" class="logSignHeader" style="text-align: right;">!انضم إلى البرنامج</h1>
+                    <br>
+                    <form action="">
+                        <fieldset class="fieldTag">
+                            <legend lang="en">Email address</legend>
+                            <legend lang="ar" style="text-align: right;">عنوان البريد الإلكتروني</legend>
+                            <input type="email" name="email" id="email">
+                        </fieldset>
+                        <fieldset class="fieldTag">
+                            <legend lang="en">Password</legend>
+                            <legend lang="ar" style="text-align: right;">كلمة السر</legend>
+                            <input type="password" name="password" id="password">
+                        </fieldset>
+                        <button class="submitButton" type="submit">
+                            <span lang="en">Sign Up</span>
+                            <span style="--Direction: translateX(4px);" lang="en" id="leftChev" style="font-size: 14pt;" class="material-icons">chevron_right</span>
+                            <span style="--Direction: translateX(-4px);" lang="ar" id="rightChev" style="font-size: 14pt;" class="material-icons">chevron_left</span>
+                            <span lang="ar" style="text-align: right;">أفتح حساب</span>
+                        </button>
+                    </form>
+                    <button lang="en" class="noYesAccount accountExists">
+                        <span>Already have an account?</span>
+                    </button>
+                    <button lang="ar" class="noYesAccount accountExists" style="float: right;">
+                        <span>هل لديك حساب؟</span>
+                    </button>
+                </div>
+            </div>
+            <div style="display: none;" id="SignInDiv" class="signLogDivs">
+                <div class="JoinSignContainer">
+                    <h1 lang="en" class="logSignHeader">Log back in!</h1>
+                    <h1 lang="ar" class="logSignHeader" style="text-align: right;">!تسجيل الدخول</h1>
+                    <br>
+                    <form action="">
+                        <fieldset class="fieldTag">
+                            <legend lang="en">Email address</legend>
+                            <legend lang="ar" style="text-align: right;">عنوان البريد الإلكتروني</legend>
+                            <input type="email" name="email" id="email">
+                        </fieldset>
+                        <fieldset class="fieldTag">
+                            <legend lang="en">Password</legend>
+                            <legend lang="ar" style="text-align: right;">كلمة السر</legend>
+                            <input type="password" name="password" id="password">
+                        </fieldset>
+                        <button class="submitButton" type="submit">
+                            <span lang="en">Log In</span>
+                            <span style="--Direction: translateX(4px);" lang="en" id="leftChev" style="font-size: 14pt;" class="material-icons">chevron_right</span>
+                            <span style="--Direction: translateX(-4px);" lang="ar" id="rightChev" style="font-size: 14pt;" class="material-icons">chevron_left</span>
+                            <span lang="ar" style="text-align: right;">تسجيل الدخول</span>
+                        </button>
+                    </form>
+                    <button lang="ar" class="noYesAccount noAccount" style="float: right;">
+                        <span>جديد هنا؟ قم بإنشاء حساب</span>
+                    </button>
+                    <button lang="en" class="noYesAccount noAccount">
+                        <span>New here? Sign up instead</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+
+        var fanButton;
+        var arabicLang = false;
+
         var offeringsMap = {
             "Arduino": "url('./assets/arduinoOffering.png')",
             "Fan":     "url('./assets/fanOffering.png')"
         }
 
         window.onload = function() {
-            document.getElementById("checkItOut").onclick = function() {
-                if(!document.getElementById("videoEmbed").classList.contains("videoEmbed-expanded")){
-                    document.getElementById("videoEmbed").classList.add("videoEmbed-expanded");
-                } else{
-                    document.getElementById("videoEmbed").classList.remove("videoEmbed-expanded");
+
+            
+            /*
+            fanButton = document.getElementById('fanButton');
+            fanButton.onclick =  function(){
+                fanButton.classList.add("fanButton-poweredOn");
+                fanButton.disabled = true;
+                document.getElementById('videoAnimation').play();
+
+                var lengthTimeout;
+                if(!arabicLang){
+                    lengthTimeout = 5000;
+                }else if (arabicLang){
+                    lengthTimeout = 10000;
+                }
+
+                var videoTimeout = window.setTimeout(function(){
+                    fanButton.classList.remove('fanButton-poweredOn');
+                    fanButton.disabled = false;
+                }, lengthTimeout);
+            }
+            */
+
+            var noAccounts = document.getElementsByClassName('noAccount');
+            var accountExists = document.getElementsByClassName('accountExists');
+
+            for (let i = 0 ; i < noAccounts.length ; i++){
+                noAccounts[i].onclick = function() {
+                    document.getElementById('SignInDiv').style.display = "none";
+                    document.getElementById('JoinTheProgramDiv').style.display = "";
                 }
             }
+
+            for (let i = 0 ; i < accountExists.length ; i++){
+                accountExists[i].onclick = function() {
+                    document.getElementById('JoinTheProgramDiv').style.display = "none";
+                    document.getElementById('SignInDiv').style.display = "";
+                }
+            }
+            
+            document.getElementById("checkItOut").onclick = function() {
+                if(!document.getElementById("videoEmbed").classList.contains("videoEmbed-expanded")){
+                    document.getElementById('features').classList.add('featuresVidExpanded');
+                    setTimeout(function() {
+                        document.getElementById("videoEmbed").classList.add("videoEmbed-expanded");
+                        setTimeout(function () {
+                            document.getElementById("videoIframe").classList.add("videoIframe-expanded");
+                        },50);
+                    },250)
+                } else{
+                    document.getElementById('features').classList.remove('featuresVidExpanded');
+                    setTimeout(function() {
+                        document.getElementById("videoIframe").classList.remove("videoIframe-expanded");
+                        setTimeout(function () {
+                            document.getElementById("videoEmbed").classList.remove("videoEmbed-expanded");
+                        },300);
+                    },250)
+                }
+            }
+
+            buttonsSwitch = document.getElementsByClassName('itemSwitch');
+            for (let i = 0 ; i < buttonsSwitch.length ; i++){
+                buttonsSwitch[i].onclick = function(){
+                    var currentXpos = parseInt(document.getElementById('textItem').style.transform.match(/(-*[0-9]+)/g));
+                    if (buttonsSwitch[i].id == "switchItemLeft"){
+                        if(currentXpos == 0) {
+                            return;
+                        }
+                        document.getElementById('textItem').style.transform = `translateX(${currentXpos+200}px)`;
+                        console.log("go left!");
+                    }else if(buttonsSwitch[i].id == "switchItemRight"){
+                        if(currentXpos == -200) {
+                            return;
+                        }
+                        document.getElementById('textItem').style.transform = `translateX(${currentXpos-200}px)`;
+                        console.log("go right!");
+                    }
+                }
+            }
+
         }
 
         function scrollToDiv(targetDiv, e){
@@ -199,6 +531,22 @@
                 scrollTop: $(`#${targetDiv}`).offset().top
             },500);
         }
+
+        $('[lang="ar"]').hide();
+        
+
+        $('#SwitchLang').click(function() {
+            arabicLang = !arabicLang;
+            if(arabicLang){
+                document.getElementById('videoAnimation').src = "./assets/ARABIC_fan_on_off.mp4";
+            }else{
+                document.getElementById('videoAnimation').src = "./assets/ENGLISH_fan_on_off_edited.mp4";
+            }
+            $('[lang="ar"]').toggle();
+            $('[lang="en"]').toggle();
+            videoTimeout.clearTimeout();
+            window.clearTimeout(videoTimeout);
+        });
 
         function setOffering(event) {
             console.log(event.innerHTML);
