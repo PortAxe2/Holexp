@@ -54,13 +54,74 @@
   }
 }
 
+@media only screen and (min-width: 1300px) {
+  #projectsInfo {
+    width: 50%;
+    margin-left: auto;
+    padding: 128px;
+  }
+  #offeringsText {
+    width: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    font-size: 16pt;
+    line-height: 2rem;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   #aboutUs {
     width: 90%;
   }
+  #projectsAnimation {
+    display: none;
+  }
+  #projectsInfo {
+    width: 100%;
+  }
+  #offerings {
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
+  }
+  #offeringsText {
+    padding-top: 64px;
+    width: 95%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14pt;
+    line-height: 2rem;
+  }
+  #rightOffering {
+    display: none;
+  }
+  #leftOffering {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 880px) {
+  #leftOffering, #rightOffering {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50%;
+  }
   #offerings {
     margin-top: 128px;
   }
@@ -86,7 +147,7 @@
     padding-bottom: 64px;
   }
   #offeringsText {
-    width: 35%;
+    width: 60%;
     padding: 16px;
     padding-left: 128px;
   }
@@ -112,15 +173,8 @@
 }
 
 @media only screen and (max-width: 880px) {
-  #offerings {
-    margin-top: 0px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   #offeringsText {
-    width: 80%;
-    padding-bottom: 16px;
+    width: 90%;
   }
   #offeringsTitle {
     padding-left: 0;
@@ -162,17 +216,53 @@
   #offeringsList {
     padding-bottom: 500px;
   }
+  #imageDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .signLogDivs {
+    width: 45%;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
+  .signLogDivs {
+    width: 100%;
+  }
   #YTWrapper {
     width: 100%;
+  }
+  .signLogDivs {
+    width: 100%;
+  }
+  #JoinTheProgramMainDiv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #imageDiv {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  #JoinSignDiv {
+    background-image: url("./assets/yellow_2x.png"), url("./assets/pink.svg");
+    background-size: contain, 300px;
+  }
   #YTWrapper {
     width: 50%;
+  }
+  #JoinTheProgramMainDiv {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .signLogDivs {
+    width: 45%;
   }
 }
 
@@ -225,7 +315,6 @@
   }
   #projectsInfo {
     width: 40%;
-    padding: 128px;
   }
 }
 
@@ -582,6 +671,7 @@ body {
 }
 
 #projects {
+  min-height: 630px;
   width: 100%;
   height: 90vh;
   display: -webkit-box;
@@ -605,15 +695,20 @@ body {
 }
 
 #projects #projectsInfo {
-  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 16px;
-  margin-left: auto;
+  width: 100%;
   z-index: 3;
 }
 
 #projects #projectsInfo #infoTextProj {
   line-height: 2rem;
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   float: right;
 }
 
@@ -631,7 +726,38 @@ body {
   font-weight: 300;
 }
 
+.offeringRobot {
+  padding-right: 32px;
+  width: 90%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#lottie {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: block;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 28px, 0);
+          transform: translate3d(0, 28px, 0);
+  text-align: center;
+  opacity: 1;
+}
+
 #offerings {
+  margin-top: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -653,7 +779,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
 }
 
 #offerings #rightOffering {
@@ -661,10 +786,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-image: url("./assets/OFFERINGS_arduino.png");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-position-y: 196px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -677,6 +798,9 @@ body {
 }
 
 #offerings #rightOffering #contentScroll {
+  position: absolute;
+  -webkit-transform: translateX(55px);
+          transform: translateX(55px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -706,7 +830,10 @@ body {
   overflow: hidden;
 }
 
-#offerings #rightOffering #contentScroll #textItemDiv h1 {
+#offerings #rightOffering #contentScroll #textItemDiv p {
+  text-align: center;
+  font-size: 26pt;
+  font-weight: 800;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
@@ -750,8 +877,6 @@ body {
 }
 
 #offeringsText {
-  width: 70%;
-  line-height: 2rem;
   font-family: 'Archivo', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,11 +884,7 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   color: #e0e0e0;
-  font-size: 16pt;
   font-weight: 300;
 }
 
@@ -941,9 +1062,7 @@ body {
   height: 800px;
   width: 100%;
   background-color: white;
-  background-image: url("./assets/yellow_2x.png");
-  background-size: contain;
-  background-position: left;
+  background-position: left, bottom right;
   background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -967,7 +1086,6 @@ body {
 }
 
 .signLogDivs {
-  width: 45%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1040,17 +1158,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 #imageDiv {
   width: 55%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

@@ -60,14 +60,58 @@
     }    
 }
 
+@media only screen and (min-width: 1300px) {
+    #projectsInfo{
+        width: 50%;
+        margin-left: auto;
+        padding: 128px;
+    }
+    #offeringsText{
+        width: 100%;
+        align-items: flex-end;
+        font-size: 16pt;
+        line-height: 2rem;
+    }
+}
+
 @media only screen and (max-width:1300px){
     #aboutUs{
         width: 90%;
+    }
+    #projectsAnimation{
+        display: none;
+    }
+    #projectsInfo{
+        width: 100%;
+    }
+    #offerings{
+        align-content: flex-end;
+    }
+    #offeringsText{
+        padding-top: 64px;
+        width: 95%;
+        align-items: center;
+        font-size: 14pt;
+        line-height: 2rem;
+    }
+    #rightOffering{
+        display: none;
+    }
+    #leftOffering{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
     }
 }
 
 
 @media only screen and (min-width:880px){
+    #leftOffering, #rightOffering{
+        display: flex;
+        flex-direction: column;
+        width: 50%; 
+    }
     #offerings{
         margin-top: 128px;
     }
@@ -93,7 +137,7 @@
         padding-bottom: 64px;
     }
     #offeringsText{
-        width: 35%;
+        width: 60%;
         padding: 16px;
         padding-left: 128px;
     }
@@ -116,13 +160,9 @@
 }
 
 @media only screen and (max-width:880px){
-    #offerings{
-        margin-top: 0px;
-        align-items: center;
-    }
     #offeringsText{
-        width: 80%;
-        padding-bottom: 16px;
+        width: 90%;
+        
     }
     #offeringsTitle{
         padding-left: 0;
@@ -157,18 +197,46 @@
     #offeringsList{
         padding-bottom: 500px;
     }
+    #imageDiv{
+        display: flex;
+    }
+    .signLogDivs{
+        width: 45%;
+    }
 }
 
 
 @media only screen and (max-width:1200px){
+    .signLogDivs{
+        width: 100%;
+    }
     #YTWrapper{
         width: 100%;
+    }
+    .signLogDivs{
+        width: 100%;
+    }
+    #JoinTheProgramMainDiv{
+        flex-direction: column;
+    }
+    #imageDiv{
+        display: none;
     }
 }
 
 @media only screen and (min-width:1200px){
+    #JoinSignDiv{
+        background-image: url('./assets/yellow_2x.png'), url('./assets/pink.svg');
+        background-size: contain, 300px;
+    }
     #YTWrapper{
         width: 50%;
+    }
+    #JoinTheProgramMainDiv{
+        flex-direction: row;
+    }
+    .signLogDivs{
+        width: 45%;
     }
 }
 
@@ -224,7 +292,6 @@
 
     #projectsInfo{
         width: 40%;
-        padding: 128px;
     }
 }
 
@@ -474,6 +541,7 @@ body{
 }
 
 #projects{
+    min-height: 630px;
     width: 100%;
     height: 90vh;
     display: flex;
@@ -490,13 +558,14 @@ body{
         }
     }
     #projectsInfo{
-        width: 50%;
+        height: fit-content;
         margin: 16px;
-        margin-left: auto;
+        width: 100%;
         z-index: 3;
         #infoTextProj{
             line-height: 2rem;
             width: 100%;
+            height: fit-content;
             float: right;
             h1, p{
                 font-family: 'Archivo', sans-serif;
@@ -513,7 +582,28 @@ body{
     }
 }
 
+.offeringRobot{
+    padding-right: 32px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#lottie{
+    width:fit-content;
+    height:fit-content;
+    display:block;
+    overflow: hidden;
+    transform: translate3d(0,28px,0);
+    text-align: center;
+    opacity: 1;
+}
+
 #offerings{
+    
+    margin-top: 150px;
     display: flex;
     background-size: cover;
     flex-direction: row;
@@ -522,22 +612,22 @@ body{
     background-repeat: no-repeat;
     #leftOffering, #rightOffering{
         display: flex;
-        flex-direction: column;
-        width: 50%;
-        
+        flex-direction: column; 
     }
     #rightOffering{
         flex-direction: row;
-        background-image: url('./assets/OFFERINGS_arduino.png');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-position-y: 196px;
+        // background-image: url('./assets/OFFERINGS_arduino.png');
+        // background-repeat: no-repeat;
+        // background-position: bottom;
+        // background-position-y: 196px;
         justify-content: center;
         align-items: flex-end;
         padding-bottom: 30px;
         margin-bottom: -30px;
         color: white;
         #contentScroll{
+            position: absolute;
+            transform: translateX(55px);
             h1{
                 font-size: 32pt;
             }
@@ -546,7 +636,10 @@ body{
                 width: 180px;
                 white-space: nowrap;
                 overflow: hidden;
-                h1{
+                p{
+                    text-align: center;
+                    font-size: 26pt;
+                    font-weight: 800;
                     transition: 0.3s ease-out;
                 }
             }
@@ -586,14 +679,10 @@ body{
 }
 
 #offeringsText{
-    width: 70%;
-    line-height: 2rem;
     font-family: 'Archivo', sans-serif;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     color: rgb(224, 224, 224);
-    font-size: 16pt;
     font-weight: 300;
 }
 
@@ -726,9 +815,7 @@ body{
     height: 800px;
     width: 100%;
     background-color: white;
-    background-image: url('./assets/yellow_2x.png');
-    background-size: contain;
-    background-position: left;
+    background-position: left, bottom right;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -741,7 +828,6 @@ body{
 }
 
 .signLogDivs{
-    width: 45%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -788,12 +874,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
 }
 
 #imageDiv{
     width: 55%;
-    display: flex;
     justify-content: center;
     align-items: center;
     img{
@@ -935,6 +1019,6 @@ body{
 
 .arabic{
     display: none;
-    
 }
+
 

@@ -4,7 +4,7 @@
 
 <head>
     <title>HOLEXP</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +14,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 
+
 <body>
+    <!--
+        <div class="offeringRobot">
+            <div id="lottie"></div>
+        </div>
+    -->
+
     <button id="SwitchLang">
         <p class="english">Switch Language</p>
         <p class="arabic" style="font-size: 10pt;">تبديل اللغة</p>
@@ -184,14 +191,15 @@
                 <br><br>
 
                 <p class="english">
+                    Holexp brings innovation in both the form and the
+                    content of teaching programming and electronics.
                     Holexp abstracts all software syntax so that
-                    learners use plain text in coding and build
-                    up their confidence, engagement and skills 
-                    through our unique platform.  Holexp is
-                    powered by AI and uses NLP (in Arabic or
-                    English) as input to create functional 
-                    automation projects using its open source
-                    hardware kit. 
+                    learners use plain text in coding and build up
+                    their confidence, engagement and skills through
+                    a unique platform. Holexp is powered by AI and
+                    uses NLP (in Arabic or English) as input to create
+                    functional automation projects using its open source
+                    hardware kit.
                 </p>
                 </p>
                 <!--Arabic-->
@@ -220,22 +228,32 @@
             </div>
         </div>
     </div>
+    
+    
     <div id="offerings" style="background-image: url('./assets/offerings_bg.svg');">
         <div id="leftOffering">
             <div class="offeringsDiv" id="offeringsTitle">
                 <h1 class="english">Vision</h1>
                 <h1 class="arabic">الرؤية</h1>
+                <!--
+                    <button id="playAnim">
+                        Play Animation
+                    </button>
+                -->
             </div>
             <div class="offeringsDiv" id="offeringsText">
                 <!--English-->
                 <p class="english">
                     With Holexp, coding has never been easier!
                     Holexp simplifies what is considered difficult
-                    in coding and hardware design. Programming and
-                    electronics is now for all: youth and anyone 
-                    who have missed out on programming or electronics.
-                    Write it in your own language and Holexp
-                    will take care of the rest.
+                    in coding and hardware design.  Programming and
+                    electronics is now for all: youth and anyone who
+                    have missed out on programming or electronics.
+                    Different from existing tools, Holexp engages
+                    minds and sets them on a path of lifelong learning.
+                    Write it in your own language and Holexp will create
+                    a python code that is compiled and executable by
+                    Holexp open source hardware kit.
                 </p>
                 <!--Arabic-->
                 <p class="arabic">
@@ -245,15 +263,18 @@
             </div>
         </div>
         <div id="rightOffering">
+            <div class="offeringRobot">
+                <div id="lottie"></div>
+            </div>
             <div id="contentScroll">
-                <button>
-                    <span id="switchItemLeft" class="itemSwitch material-icons">chevron_left</span>
+                <button id="switchItemLeft" class="itemSwitch">
+                    <span class="material-icons">chevron_left</span>
                 </button>
                 <div id="textItemDiv">
-                    <h1 id="textItem" style="transform: translateX(0px);" >Arduino &nbsp &nbsp &nbsp Fan</h1>
+                    <p id="textItem" style="transform: translateX(0px);" >&nbsp Arduino &nbsp&nbsp &nbsp DC Motor &nbsp &nbsp &nbsp &nbsp LED &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp Fan</p>
                 </div>
-                <button>
-                    <span id="switchItemRight" class="itemSwitch material-icons">chevron_right</span>
+                <button id="switchItemRight" class="itemSwitch">
+                    <span class="itemSwitch material-icons">chevron_right</span>
                 </button>
             </div>
         </div>
@@ -283,13 +304,17 @@
             <div class="aboutUsText">
                 <!--English-->
                 <h3 class="english">Holexp</h3>
-                <p class="english">Holexp brings innovation in both the form and
-                    the content of teaching programming and electronics.
-                    <br><br>
-                    Different from traditional ways of learning, Holexp
-                    engages young minds early in their learning journey
-                    and sets them on a path of lifelong learning. 
-                    
+                <p class="english">
+                    Holexp offers a rich hardware kit that includes a
+                    Bluetooth module, 4 different Microcontrollers, 7
+                    Digital Inputs (push button, infrared receiver,
+                    tilt switch, infrared presence sensor, ultrasonic
+                    distance sensor, compass, real time clock), 9 Analog
+                    Inputs: (temperature, humidity, rain, pressure and
+                    altitude sensors, soil humidity sensor, microphone,
+                    light-dependent resistor, potentiometer), 7 Outputs
+                    ( led, multicolored led, buzzer, 2x16 characters
+                    LCD, DC motor, stepper motor, servo motor).
                 </p>
                 <!--Arabic-->
                 <h3 class="arabic" style="text-align: right;">فريقنا</h3>
@@ -450,6 +475,9 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./lottie.js" type="text/javascript"></script>
+    <script src="./index.js" type="text/javascript"></script>
+
     <script>
 
         $('.arabic').hide();
@@ -465,6 +493,8 @@
         var checkItOutButtons;
 
         window.onload = function() {
+
+            
 
             checkItOutButtons = document.getElementsByClassName('check');
             console.log(checkItOutButtons);
@@ -510,7 +540,17 @@
                 }
             }
 
+            function disableButtonTemp() {
+                buttonsSwitch[0].disabled = true;
+                buttonsSwitch[1].disabled = true;
+                setTimeout(function(){
+                    buttonsSwitch[0].disabled = false;
+                    buttonsSwitch[1].disabled = false;
+                },900);
+            }
+
             buttonsSwitch = document.getElementsByClassName('itemSwitch');
+            console.log(buttonsSwitch);
             for (let i = 0 ; i < buttonsSwitch.length ; i++){
                 buttonsSwitch[i].onclick = function(){
                     var currentXpos = parseInt(document.getElementById('textItem').style.transform.match(/(-*[0-9]+)/g));
@@ -518,13 +558,17 @@
                         if(currentXpos == 0) {
                             return;
                         }
+                        disableButtonTemp();
+                        playAnimationReverse();
                         document.getElementById('textItem').style.transform = `translateX(${currentXpos+200}px)`;
                         console.log("go left!");
                     }else if(buttonsSwitch[i].id == "switchItemRight"){
-                        if(currentXpos == -200) {
+                        if(currentXpos == -600) {
                             return;
                         }
                         document.getElementById('textItem').style.transform = `translateX(${currentXpos-200}px)`;
+                        disableButtonTemp();
+                        playAnimation();
                         console.log("go right!");
                     }
                 }
