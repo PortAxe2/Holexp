@@ -101,17 +101,17 @@
             <div id="quickLinks">
                 <!--English-->
                 <ul class="english">
-                    <li onclick="scrollToDiv('projects')">Mission</li>
-                    <li onclick="scrollToDiv('offerings')">Vision</li>
-                    <li onclick="scrollToDiv('aboutUs')">About</li>
-                    <li onclick="scrollToDiv('offerings')">Login</li>
+                    <li onclick="document.getElementById('projects').scrollIntoView()">Mission</li>
+                    <li onclick="document.getElementById('offerings').scrollIntoView()">Vision</li>
+                    <li onclick="document.getElementById('aboutUs').scrollIntoView()">About</li>
+                    <li onclick="document.getElementById('offerings').scrollIntoView()">Login</li>
                 </ul>
                 <!--Arabic-->
                 <ul class="arabic">
-                    <li onclick="scrollToDiv('projects')">المهمة</li>
-                    <li onclick="scrollToDiv('offerings')">الرؤية</li>
-                    <li onclick="scrollToDiv('aboutUs')">التعريف بنا</li>
-                    <li onclick="scrollToDiv('offerings')">تسجيل الدخول</li>
+                    <li onclick="document.getElementById('projects').scrollIntoView()">المهمة</li>
+                    <li onclick="document.getElementById('offerings').scrollIntoView()">الرؤية</li>
+                    <li onclick="document.getElementById('aboutUs').scrollIntoView()">التعريف بنا</li>
+                    <li onclick="document.getElementById('offerings').scrollIntoView()">تسجيل الدخول</li>
                 </ul>
             </div>
         </div>
@@ -492,15 +492,20 @@
 
             for (let i = 0 ; i < noAccounts.length ; i++){
                 noAccounts[i].onclick = function() {
+                    document.getElementById('JoinSignDiv').style.backgroundImage = "url('./assets/yellow_2x.png'), url('./assets/pink.svg')";
+                    document.getElementById('JoinSignDiv').style.backgroundSize = "contain, 300px";
                     document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
                     document.getElementById('SignInDiv').style.display = "none";
                     document.getElementById('JoinTheProgramDiv').style.display = "";
+                    document.getElementById('signUpIllustration').style.display = "";
                 }
             }
             
             for (let i = 0 ; i < accountExists.length ; i++){
                 accountExists[i].onclick = function() {
-                    document.getElementById('signUpIllustration').src = "./assets/yellow_bot_1_2x.png";
+                    document.getElementById('JoinSignDiv').style.backgroundImage = "url('./assets/sign_in_bg.png')";
+                    document.getElementById('JoinSignDiv').style.backgroundSize = "cover";
+                    document.getElementById('signUpIllustration').style.display = "none";
                     document.getElementById('JoinTheProgramDiv').style.display = "none";
                     document.getElementById('SignInDiv').style.display = "";
                 }

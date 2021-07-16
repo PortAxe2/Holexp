@@ -69,7 +69,8 @@
     #offeringsText{
         width: 100%;
         align-items: center;
-        font-size: 16pt;
+        margin-top: 64px;
+        font-size: 14pt;
         line-height: 2rem;
     }
 }
@@ -215,22 +216,19 @@
     #YTWrapper{
         width: 100%;
     }
-    .signLogDivs{
-        width: 100%;
-    }
     #JoinTheProgramMainDiv{
         flex-direction: column;
     }
     #imageDiv{
         display: none;
     }
+
+    #JoinSignDiv{
+        background-image: none;
+    }
 }
 
 @media only screen and (min-width:1200px){
-    #JoinSignDiv{
-        background-image: url('./assets/yellow_2x.png'), url('./assets/pink.svg');
-        background-size: contain, 300px;
-    }
     #YTWrapper{
         width: 50%;
     }
@@ -817,8 +815,10 @@ body{
     height: 800px;
     width: 100%;
     background-color: white;
+    background-image: url('./assets/yellow_2x.png'), url('./assets/pink.svg');
     background-position: left, bottom right;
     background-repeat: no-repeat;
+    background-size: contain, 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -852,6 +852,7 @@ body{
         border-color: rgba($color: #010B1C, $alpha: 0.25);
         input{
             border: none;
+            background: none;
             height: 30px;
             width: 90%;
         }
@@ -884,7 +885,7 @@ body{
     align-items: center;
     img{
         margin-left: 64px;
-        width: 75%;
+        width: 70%;
     }
 }
 
