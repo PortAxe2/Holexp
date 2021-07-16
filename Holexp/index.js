@@ -15,6 +15,19 @@ var anim;
 
 anim = lottie.loadAnimation(params);
 
+function getAnimation() {
+  var ajaxReq = new XMLHttpRequest();
+  ajaxReq.onreadystatechange = function() {
+    if(ajaxReq.readyState == 4 && ajaxReq.status == 200){
+      console.log(this.response);
+    }
+    else{
+      console.log("error");
+    }
+  }
+  ajaxReq.open("GET", './all_animations.json', true);
+  ajaxReq.send();
+}
 
 function playAnimation() {
   anim.setDirection(1);

@@ -68,7 +68,7 @@
     }
     #offeringsText{
         width: 100%;
-        align-items: flex-end;
+        align-items: center;
         font-size: 16pt;
         line-height: 2rem;
     }
@@ -110,8 +110,10 @@
     #leftOffering, #rightOffering{
         display: flex;
         flex-direction: column;
-        width: 50%; 
+        width: 50%;
     }
+
+
     #offerings{
         margin-top: 128px;
     }
@@ -137,7 +139,7 @@
         padding-bottom: 64px;
     }
     #offeringsText{
-        width: 60%;
+        width: 80%;
         padding: 16px;
         padding-left: 128px;
     }
@@ -303,7 +305,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #F6F6F7;
+    background-color: #FFFFFF;
 }
 
 #landingDiv{
@@ -583,7 +585,6 @@ body{
 }
 
 .offeringRobot{
-    padding-right: 32px;
     width: 90%;
     height: 90%;
     display: flex;
@@ -592,11 +593,12 @@ body{
 }
 
 #lottie{
+    margin-bottom: -28px;
     width:fit-content;
     height:fit-content;
     display:block;
     overflow: hidden;
-    transform: translate3d(0,28px,0);
+    transform: translate3d(0,0,0);
     text-align: center;
     opacity: 1;
 }
@@ -882,7 +884,7 @@ body{
     align-items: center;
     img{
         margin-left: 64px;
-        width: 60%;
+        width: 75%;
     }
 }
 

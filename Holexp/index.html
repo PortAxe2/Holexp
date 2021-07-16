@@ -104,14 +104,14 @@
                     <li onclick="scrollToDiv('projects')">Mission</li>
                     <li onclick="scrollToDiv('offerings')">Vision</li>
                     <li onclick="scrollToDiv('aboutUs')">About</li>
-                    <li onclick="scrollToDiv('signUp')">Login</li>
+                    <li onclick="scrollToDiv('offerings')">Login</li>
                 </ul>
                 <!--Arabic-->
                 <ul class="arabic">
                     <li onclick="scrollToDiv('projects')">المهمة</li>
                     <li onclick="scrollToDiv('offerings')">الرؤية</li>
                     <li onclick="scrollToDiv('aboutUs')">التعريف بنا</li>
-                    <li onclick="scrollToDiv('signUp')">تسجيل الدخول</li>
+                    <li onclick="scrollToDiv('offerings')">تسجيل الدخول</li>
                 </ul>
             </div>
         </div>
@@ -262,6 +262,7 @@
                 </p>
             </div>
         </div>
+
         <div id="rightOffering">
             <div class="offeringRobot">
                 <div id="lottie"></div>
@@ -278,20 +279,7 @@
                 </button>
             </div>
         </div>
-        <!--
-        <div class="offeringsDiv" id="offeringsList">
-            <ul>
-                <li class="offeringListItem offeringListItem-selected" onclick="setOffering(this)">Arduino</li>
-                <li class="offeringListItem" onclick="setOffering(this)">Fan</li>
-                <li class="offeringListItem" onclick="setOffering(this)">LED</li>
-            </ul>
-            <ul>
-                <li class="offeringListItem" onclick="setOffering(this)">Wires</li>
-                <li class="offeringListItem" onclick="setOffering(this)">DC Motor</li>
-                <li class="offeringListItem" onclick="setOffering(this)">Sensor</li>
-            </ul>
-        </div> 
-        -->
+        
     </div>
 
     <div id="aboutUsHeader" style="text-align: center;">
@@ -494,7 +482,7 @@
 
         window.onload = function() {
 
-            
+            getAnimation();
 
             checkItOutButtons = document.getElementsByClassName('check');
             console.log(checkItOutButtons);
@@ -579,12 +567,10 @@
         function scrollToDiv(targetDiv, e){
             console.log(targetDiv);
             //document.getElementById(targetDiv).scrollIntoView();
-            $('html, body').animate({
-                scrollTop: '-=80px'
-            },350);
+            
             $('html, body').animate({
                 scrollTop: $(`#${targetDiv}`).offset().top
-            },500);
+            },150);
         }        
 
         $('#SwitchLang').click(function() {

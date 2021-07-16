@@ -62,9 +62,9 @@
   }
   #offeringsText {
     width: 100%;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 16pt;
     line-height: 2rem;
   }
@@ -147,7 +147,7 @@
     padding-bottom: 64px;
   }
   #offeringsText {
-    width: 60%;
+    width: 80%;
     padding: 16px;
     padding-left: 128px;
   }
@@ -326,7 +326,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #F6F6F7;
+  background-color: #FFFFFF;
 }
 
 #landingDiv {
@@ -727,7 +727,6 @@ body {
 }
 
 .offeringRobot {
-  padding-right: 32px;
   width: 90%;
   height: 90%;
   display: -webkit-box;
@@ -742,6 +741,7 @@ body {
 }
 
 #lottie {
+  margin-bottom: -28px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -750,8 +750,8 @@ body {
   height: fit-content;
   display: block;
   overflow: hidden;
-  -webkit-transform: translate3d(0, 28px, 0);
-          transform: translate3d(0, 28px, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   text-align: center;
   opacity: 1;
 }
@@ -1172,7 +1172,7 @@ body {
 
 #imageDiv img {
   margin-left: 64px;
-  width: 60%;
+  width: 75%;
 }
 
 .submitButton {
