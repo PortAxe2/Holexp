@@ -121,7 +121,7 @@
                     <h1 class="english">Who said coding<br/>is difficult?</h1>
                     <h1 style="text-align: right;" class="arabic">من قال أن<br/>البرمجة صعبة؟</h1>
                     <h6 class="english">With Holepx, it's never been easier!</h6>
-                    <h6 style="text-align: right;" class="arabic">!لن تكون أسهل من ذلك Holepx مع</h6>
+                    <h6 style="text-align: right;" class="arabic">!مع هولكسبي، لن تكون أسهل من ذلك</h6>
                     
                     <div class="english">
                         <button class="check">
@@ -220,7 +220,7 @@
                 <br><br>
 
                 <p style="text-align: right; margin: 0;" class="arabic">
-                    يختصر كل بناء جمل البرامج بحيث يستطيع التلميذ إستخدام نصاً بسيطاً في البرمجة و بناء ثقتهم بنفسهم، التزامهم و مهاراتهم عبر منصتنا الفريدة من نوعها.
+                    .هولكسبي يختصر كل بناء جمل البرامج بحيث يستطيع التلميذ إستخدام نصاً بسيطاً في البرمجة و بناء ثقتهم بنفسهم، التزامهم و مهاراتهم عبر منصتنا الفريدة من نوعها
                 </p>
 
                 <!--
@@ -260,7 +260,7 @@
                     Holexp open source hardware kit.
                 </p>
                 <!--Arabic-->
-                <p class="arabic">
+                <p class="arabic" style="text-align: right;">
                     مع هولكسبي، لم تكن البرمجة أسهل من أي وقت مضى! يبسط هولكسبي ما يعتبر صعبًا في الترميز وتصميم الأجهزة. البرمجة والإلكترونيات متاحة الآن للجميع: الشباب وأي شخص فاته البرمجة أو الإلكترونيات. تختلف عن الأدوات الحالية ، تعمل هولكسبي العقول وتضعها على مسار التعلم مدى الحياة. اكتبه بلغتك الخاصة وسيقوم هولكسبي بإنشاء كود بيثون الذي يتم تجميعه وتنفيذه بواسطة مجموعة أدوات هولكسبي مفتوحة المصدر.
                 </p>
             </div>
@@ -271,7 +271,7 @@
                 <div id="lottie"></div>
             </div>
             <div id="contentScroll">
-                <button id="switchItemLeft" class="itemSwitch">
+                <button style="visibility: hidden;" id="switchItemLeft" class="itemSwitch">
                     <span class="material-icons">chevron_left</span>
                 </button>
                 <div id="textItemDiv">
@@ -482,6 +482,9 @@
         var checkItOutButtons;
 
         window.onload = function() {
+
+            var items = ["Arduino", "DC Motor", "LED", "Fan"];
+            var currentItem = items[0];
             
             checkItOutButtons = document.getElementsByClassName('check');
             console.log(checkItOutButtons);
@@ -493,7 +496,7 @@
                 noAccounts[i].onclick = function() {
                     document.getElementById('JoinSignDiv').style.backgroundImage = "url('./assets/yellow_2x.png'), url('./assets/pink.svg')";
                     document.getElementById('JoinSignDiv').style.backgroundSize = "contain, 300px";
-                    document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
+                    //document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
                     document.getElementById('SignInDiv').style.display = "none";
                     document.getElementById('JoinTheProgramDiv').style.display = "";
                     document.getElementById('signUpIllustration').style.display = "";
@@ -541,6 +544,20 @@
                 },900);
             }
 
+
+            function hideUnhideArrows(){
+                if(currentItem == items[1] || currentItem == items[2]){
+                    document.getElementById('switchItemLeft').style.visibility = "visible";
+                    document.getElementById('switchItemRight').style.visibility = "visible";
+                }else if (currentItem == items[0]){
+                    document.getElementById('switchItemLeft').style.visibility = "hidden";
+                    document.getElementById('switchItemRight').style.visibility = "visible";
+                }else if (currentItem == items[3]){
+                    document.getElementById('switchItemLeft').style.visibility = "visible";
+                    document.getElementById('switchItemRight').style.visibility = "hidden";
+                }
+            }
+
             buttonsSwitch = document.getElementsByClassName('itemSwitch');
             console.log(buttonsSwitch);
             for (let i = 0 ; i < buttonsSwitch.length ; i++){
@@ -550,15 +567,28 @@
                         if(currentXpos == 0) {
                             return;
                         }
+                        
                         disableButtonTemp();
                         playAnimationReverse();
                         document.getElementById('textItem').style.transform = `translateX(${currentXpos+200}px)`;
+
+                        console.log(currentItem);
+                        var nextIndexItem = parseInt(items.indexOf(currentItem))-1;
+                        currentItem = items[nextIndexItem];
+                        console.log(currentItem);
+                        hideUnhideArrows();
+
                         console.log("go left!");
                     }else if(buttonsSwitch[i].id == "switchItemRight"){
                         if(currentXpos == -600) {
                             return;
                         }
                         document.getElementById('textItem').style.transform = `translateX(${currentXpos-200}px)`;
+                        console.log(currentItem);
+                        var nextIndexItem = parseInt(items.indexOf(currentItem))+1;
+                        currentItem = items[nextIndexItem];
+                        console.log(currentItem);
+                        hideUnhideArrows();
                         disableButtonTemp();
                         playAnimation();
                         console.log("go right!");
