@@ -56,9 +56,11 @@
 
 @media only screen and (min-width: 1300px) {
   #projectsInfo {
-    width: 50%;
+    width: 40%;
     margin-left: auto;
-    padding: 128px;
+  }
+  #projects {
+    height: 100%;
   }
   #offeringsText {
     width: 100%;
@@ -77,6 +79,11 @@
   }
   #projectsAnimation {
     display: none;
+  }
+  #projects {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #projectsInfo {
     width: 100%;
@@ -309,9 +316,6 @@
   }
   #projects {
     background-size: contain;
-  }
-  #projectsInfo {
-    width: 40%;
   }
 }
 
@@ -668,20 +672,30 @@ body {
 }
 
 #projects {
-  min-height: 630px;
-  width: 100%;
-  height: 90vh;
+  height: 95vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  background-image: url(./assets/binary_bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
   overflow: hidden;
 }
 
 #projects #projectsAnimation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   height: 100%;
   z-index: 2;
@@ -696,7 +710,7 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   margin: 16px;
-  width: 100%;
+  padding-left: 32px;
   z-index: 3;
 }
 
@@ -796,8 +810,8 @@ body {
 
 #offerings #rightOffering #contentScroll {
   position: absolute;
-  -webkit-transform: translateX(55px);
-          transform: translateX(55px);
+  -webkit-transform: translateX(65px);
+          transform: translateX(65px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -920,7 +934,6 @@ body {
 
 #aboutUs {
   overflow-x: scroll;
-  margin-top: 64px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -944,6 +957,10 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   margin: 16px;
+}
+
+#aboutUsHeader {
+  margin-top: 256px;
 }
 
 #aboutUsHeader h1 {
@@ -1162,16 +1179,19 @@ body {
 
 #imageDiv {
   width: 55%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 #imageDiv img {
-  margin-left: 64px;
+  margin-right: 64px;
   width: 70%;
 }
 

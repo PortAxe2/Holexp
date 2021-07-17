@@ -104,14 +104,14 @@
                     <li onclick="document.getElementById('projects').scrollIntoView()">Mission</li>
                     <li onclick="document.getElementById('offerings').scrollIntoView()">Vision</li>
                     <li onclick="document.getElementById('aboutUs').scrollIntoView()">About</li>
-                    <li onclick="document.getElementById('offerings').scrollIntoView()">Login</li>
+                    <li onclick="document.getElementById('JoinTheProgramMainDiv').scrollIntoView()">Login</li>
                 </ul>
                 <!--Arabic-->
                 <ul class="arabic">
                     <li onclick="document.getElementById('projects').scrollIntoView()">المهمة</li>
                     <li onclick="document.getElementById('offerings').scrollIntoView()">الرؤية</li>
                     <li onclick="document.getElementById('aboutUs').scrollIntoView()">التعريف بنا</li>
-                    <li onclick="document.getElementById('offerings').scrollIntoView()">تسجيل الدخول</li>
+                    <li onclick="document.getElementById('JoinTheProgramMainDiv').scrollIntoView()">تسجيل الدخول</li>
                 </ul>
             </div>
         </div>
@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div id="MlRobot">
-                <img src="./assets/HOME_illustration_2x.png" alt="ML Robot">
+                <img id="robotImageTag" src="./assets/HOME_illustration_2x.png" alt="ML Robot">
             </div>
         </div>
     </div>
@@ -176,8 +176,12 @@
     </div>
     <div id="projects">
         <div id="projectsAnimation">
-            <video autoplay loop id="videoAnimation" src="./assets/ENGLISH_fan_on_off.mp4"></video>
+            <div id="computerAnimationEnglish"></div>
+            <div style="display: none;" id="computerAnimationArabic"></div>
         </div>
+        <!--
+            <video autoplay muted loop id="videoAnimation" src="./assets/ENGLISH_fan_on_off.mp4"></video>
+        -->
         <div id="projectsInfo">
             <div id="infoTextProj">
                 <!--English-->
@@ -257,8 +261,7 @@
                 </p>
                 <!--Arabic-->
                 <p class="arabic">
-                    Holexp مع,
-                    لن تكون تكن المبرمجة أسهل من ذالك
+                    مع هولكسبي، لم تكن البرمجة أسهل من أي وقت مضى! يبسط هولكسبي ما يعتبر صعبًا في الترميز وتصميم الأجهزة. البرمجة والإلكترونيات متاحة الآن للجميع: الشباب وأي شخص فاته البرمجة أو الإلكترونيات. تختلف عن الأدوات الحالية ، تعمل هولكسبي العقول وتضعها على مسار التعلم مدى الحياة. اكتبه بلغتك الخاصة وسيقوم هولكسبي بإنشاء كود بيثون الذي يتم تجميعه وتنفيذه بواسطة مجموعة أدوات هولكسبي مفتوحة المصدر.
                 </p>
             </div>
         </div>
@@ -375,11 +378,9 @@
                 </span>
                 
                 <!--Arabic-->
-                <h3 class="arabic" style="text-align: right;">Holexp</h3>
+                <h3 class="arabic" style="text-align: right;">هولكسبي</h3>
                 <p style="text-align: right;" class="arabic">
-                    يطور طريقة التعليم والمحتوى في 
-                    Holexp
-                    .البرمجة وللكترونية
+                    هولكسبي يطور طريقة التعليم والمحتوى في البرمجة وللكترونية                     
                     <br><br>
                     بعيداً عن طرق التعلم  التقليدية فالتعلم، يجذب الشباب في الفترة المبكرة في دراستهم و يضعهم عل مسار التعلم مدى الحياة
                 </p>
@@ -481,9 +482,7 @@
         var checkItOutButtons;
 
         window.onload = function() {
-
-            getAnimation();
-
+            
             checkItOutButtons = document.getElementsByClassName('check');
             console.log(checkItOutButtons);
 
@@ -581,18 +580,20 @@
         $('#SwitchLang').click(function() {
             arabicLang = !arabicLang;
             if(arabicLang){
-                document.getElementById('videoAnimation').src = "./assets/ARABIC_fan_on_off.mp4";
+                document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x_ar.png";
+                document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x_ar.png";
+                document.getElementById('computerAnimationEnglish').style.display = "none";
+                document.getElementById('computerAnimationArabic').style.display = "";
                 $('.english').hide();
                 $('.arabic').show();
             }else{
-                document.getElementById('videoAnimation').src = "./assets/ENGLISH_fan_on_off_edited.mp4";
+                document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
+                document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x.png";
+                document.getElementById('computerAnimationArabic').style.display = "none";
+                document.getElementById('computerAnimationEnglish').style.display = "";
                 $('.arabic').hide();
                 $('.english').show();
             }
-            //$('[lang="ar"]').toggle();
-            //$('[lang="en"]').toggle();
-            videoTimeout.clearTimeout();
-            window.clearTimeout(videoTimeout);
         });
 
         function setOffering(event) {
@@ -601,6 +602,8 @@
             event.classList.add('offeringListItem-selected');
             document.getElementById("offerings").style.backgroundImage = offeringsMap[event.innerHTML];
         }
+
+        
         
     </script>
 
