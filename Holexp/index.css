@@ -62,6 +62,7 @@
   }
   #projects {
     height: 100vh;
+    background-position: left;
     background-image: url(./assets/binary_bg.jpg);
   }
   #projectsAnimation {
@@ -90,10 +91,12 @@
     display: none;
   }
   #projects {
+    background-position: bottom;
+    padding-bottom: 128px;
+    background-image: url(./assets/binary_bg.jpg);
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    background: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -329,10 +332,6 @@
   #projectsInfo {
     width: 85%;
   }
-  #projects {
-    background-size: cover;
-    background-position: center;
-  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -347,9 +346,6 @@
   }
   .feature {
     float: left;
-  }
-  #projects {
-    background-size: contain;
   }
 }
 
@@ -714,7 +710,6 @@ body {
           align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left;
   overflow: hidden;
 }
 

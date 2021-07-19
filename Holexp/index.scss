@@ -68,6 +68,7 @@
     }
     #projects{
         height: 100vh;
+        background-position: left;
         background-image: url(./assets/binary_bg.jpg);
     }
     #projectsAnimation{
@@ -92,8 +93,10 @@
         display: none;
     }
     #projects{
+        background-position: bottom;
+        padding-bottom: 128px;
+        background-image: url(./assets/binary_bg.jpg);
         height: fit-content;
-        background: none;
         flex-direction: column-reverse;
         height: fit-content;
     }
@@ -291,10 +294,6 @@
     #projectsInfo{
         width: 85%;
     }
-    #projects{
-        background-size: cover;
-        background-position: center;
-    }
 }
 
 //Bigger Screens
@@ -312,11 +311,6 @@
     .feature{
         float: left;
     }
-
-    #projects{
-        background-size: contain;
-    }
-    
 }
 
 *{
@@ -568,7 +562,6 @@ body{
     align-items: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left;
     overflow: hidden;
     #projectsAnimation{
         display: flex;
