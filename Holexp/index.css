@@ -797,6 +797,10 @@ body {
   opacity: 1;
 }
 
+#computerAnimationEnglish, #computerAnimationArabic, #lottie {
+  width: 100%;
+}
+
 #offerings {
   margin-top: 150px;
   display: -webkit-box;
