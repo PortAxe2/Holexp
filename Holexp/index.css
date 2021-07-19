@@ -81,6 +81,23 @@
     font-size: 14pt;
     line-height: 2rem;
   }
+  #rightOffering {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  #rightOffering #contentScroll {
+    position: absolute;
+    -webkit-transform: translateX(65px);
+            transform: translateX(65px);
+  }
+  #offerings {
+    height: 950px;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
@@ -92,7 +109,7 @@
   }
   #projects {
     background-position: bottom;
-    padding-bottom: 128px;
+    padding-bottom: 64px;
     background-image: url(./assets/binary_bg.jpg);
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -113,6 +130,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    background-position: bottom;
   }
   #offeringsText {
     width: 95%;
@@ -125,7 +143,17 @@
     line-height: 2rem;
   }
   #rightOffering {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     display: none;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #leftOffering {
     display: -webkit-box;
@@ -139,6 +167,11 @@
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+  }
+  #offerings {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 
@@ -263,9 +296,6 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  #offerings {
-    padding-bottom: 128px;
   }
   #YTWrapper {
     width: 100%;
@@ -824,7 +854,6 @@ body {
   display: -ms-flexbox;
   display: flex;
   background-size: cover;
-  height: 950px;
   width: 100%;
   background-repeat: no-repeat;
 }
@@ -840,25 +869,13 @@ body {
 }
 
 #offerings #rightOffering {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-bottom: 30px;
-  margin-bottom: -30px;
   color: white;
 }
 
 #offerings #rightOffering #contentScroll {
-  position: absolute;
-  -webkit-transform: translateX(65px);
-          transform: translateX(65px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1273,6 +1290,10 @@ body {
 .submitButton:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+.itemSwitch {
+  padding: 0;
 }
 
 #SwitchLang {

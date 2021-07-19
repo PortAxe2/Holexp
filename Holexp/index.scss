@@ -83,6 +83,17 @@
         font-size: 14pt;
         line-height: 2rem;
     }
+    #rightOffering{
+        flex-direction: row;
+        align-items: flex-end;
+        #contentScroll{
+            position: absolute;
+            transform: translateX(65px);
+        }
+    }
+    #offerings{
+        height: 950px;
+    }
 }
 
 @media only screen and (max-width:1300px){
@@ -94,7 +105,7 @@
     }
     #projects{
         background-position: bottom;
-        padding-bottom: 128px;
+        padding-bottom: 64px;
         background-image: url(./assets/binary_bg.jpg);
         height: fit-content;
         flex-direction: column-reverse;
@@ -106,6 +117,7 @@
     #offerings{
         align-content: flex-end;
         flex-direction: column;
+        background-position: bottom;
     }
     #offeringsText{
         width: 95%;
@@ -116,13 +128,19 @@
         line-height: 2rem;
     }
     #rightOffering{
+        align-items: center;
+        flex-direction: column;
         display: none;
+        height: fit-content;
     }
     #leftOffering{
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%; 
+    }
+    #offerings{
+        height: fit-content;
     }
 }
 
@@ -233,9 +251,6 @@
     .signLogDivs{
         width: 70%;
         align-items: center;
-    }
-    #offerings{
-        padding-bottom: 128px;
     }
     #YTWrapper{
         width: 100%;
@@ -642,7 +657,6 @@ body{
     margin-top: 150px;
     display: flex;
     background-size: cover;
-    height: 950px;
     width: 100%;
     background-repeat: no-repeat;
     #leftOffering, #rightOffering{
@@ -650,19 +664,9 @@ body{
         flex-direction: column; 
     }
     #rightOffering{
-        flex-direction: row;
-        // background-image: url('./assets/OFFERINGS_arduino.png');
-        // background-repeat: no-repeat;
-        // background-position: bottom;
-        // background-position-y: 196px;
         justify-content: center;
-        align-items: flex-end;
-        padding-bottom: 30px;
-        margin-bottom: -30px;
         color: white;
         #contentScroll{
-            position: absolute;
-            transform: translateX(65px);
             h1{
                 font-size: 32pt;
             }
@@ -947,6 +951,10 @@ body{
     &:active{
         transform: scale(0.95);
     }
+}
+
+.itemSwitch{
+    padding: 0;
 }
 
 #SwitchLang{
