@@ -275,7 +275,8 @@
                     <span class="material-icons">chevron_left</span>
                 </button>
                 <div id="textItemDiv">
-                    <p id="textItem" style="transform: translateX(0px);" >&nbsp Arduino &nbsp&nbsp &nbsp DC Motor &nbsp &nbsp &nbsp &nbsp LED &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp Fan</p>
+                    <p class="english textItem" style="transform: translateX(0px);" >&nbsp Arduino &nbsp&nbsp &nbsp DC Motor &nbsp &nbsp &nbsp &nbsp LED &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp Fan</p>
+                    <p class="arabic textItem" style="transform: translateX(0px);"  >&nbsp المروحة &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ليد &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp موتور &nbsp&nbsp&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp اردوينو</p>
                 </div>
                 <button id="switchItemRight" class="itemSwitch">
                     <span class="itemSwitch material-icons">chevron_right</span>
@@ -565,7 +566,7 @@
             console.log(buttonsSwitch);
             for (let i = 0 ; i < buttonsSwitch.length ; i++){
                 buttonsSwitch[i].onclick = function(){
-                    var currentXpos = parseInt(document.getElementById('textItem').style.transform.match(/(-*[0-9]+)/g));
+                    var currentXpos = parseInt(document.getElementsByClassName('textItem')[0].style.transform.match(/(-*[0-9]+)/g));
                     if (buttonsSwitch[i].id == "switchItemLeft"){
                         if(currentXpos == 0) {
                             return;
@@ -573,7 +574,8 @@
                         
                         disableButtonTemp();
                         playAnimationReverse();
-                        document.getElementById('textItem').style.transform = `translateX(${currentXpos+200}px)`;
+                        document.getElementsByClassName('textItem')[0].style.transform = `translateX(${currentXpos+200}px)`;
+                        document.getElementsByClassName('textItem')[1].style.transform = `translateX(${currentXpos+200}px)`;
 
                         console.log(currentItem);
                         var nextIndexItem = parseInt(items.indexOf(currentItem))-1;
@@ -586,7 +588,8 @@
                         if(currentXpos == -600) {
                             return;
                         }
-                        document.getElementById('textItem').style.transform = `translateX(${currentXpos-200}px)`;
+                        document.getElementsByClassName('textItem')[0].style.transform = `translateX(${currentXpos-200}px)`;
+                        document.getElementsByClassName('textItem')[1].style.transform = `translateX(${currentXpos-200}px)`;
                         console.log(currentItem);
                         var nextIndexItem = parseInt(items.indexOf(currentItem))+1;
                         currentItem = items[nextIndexItem];
