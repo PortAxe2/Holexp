@@ -83,14 +83,18 @@
         font-size: 14pt;
         line-height: 2rem;
     }
+    
     #rightOffering{
+        height: 950px;
         flex-direction: row;
         align-items: flex-end;
+        justify-content: flex-end;
         #contentScroll{
             position: absolute;
-            transform: translateX(65px);
+            transform: translateX(-220px) translateY(-40px);
         }
     }
+    
     #offerings{
         height: 950px;
     }
@@ -128,9 +132,9 @@
         line-height: 2rem;
     }
     #rightOffering{
+        justify-content: center;
         align-items: center;
         flex-direction: column;
-        display: none;
         height: fit-content;
     }
     #leftOffering{
@@ -661,10 +665,9 @@ body{
     background-repeat: no-repeat;
     #leftOffering, #rightOffering{
         display: flex;
-        flex-direction: column; 
+        
     }
     #rightOffering{
-        justify-content: center;
         color: white;
         #contentScroll{
             h1{
@@ -687,8 +690,6 @@ body{
             height: fit-content;
             justify-content: center;
             align-items: center;
-            
-            margin-bottom: 64px;
         }
         button{
             display: flex;

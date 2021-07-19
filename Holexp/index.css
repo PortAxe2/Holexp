@@ -82,6 +82,7 @@
     line-height: 2rem;
   }
   #rightOffering {
+    height: 950px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -89,11 +90,14 @@
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   #rightOffering #contentScroll {
     position: absolute;
-    -webkit-transform: translateX(65px);
-            transform: translateX(65px);
+    -webkit-transform: translateX(-220px) translateY(-40px);
+            transform: translateX(-220px) translateY(-40px);
   }
   #offerings {
     height: 950px;
@@ -143,6 +147,9 @@
     line-height: 2rem;
   }
   #rightOffering {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -150,7 +157,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    display: none;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -862,16 +868,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 #offerings #rightOffering {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   color: white;
 }
 
@@ -891,7 +890,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 64px;
 }
 
 #offerings #rightOffering #contentScroll h1 {
