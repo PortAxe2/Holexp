@@ -54,7 +54,7 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 800px) {
   #projectsInfo {
     height: 100vh;
     width: 40%;
@@ -77,12 +77,13 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 64px;
+    margin-top: 185px;
     font-size: 14pt;
     line-height: 2rem;
   }
   #rightOffering {
-    height: 950px;
+    height: 700px;
+    padding-right: 32px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -100,11 +101,11 @@
             transform: translateX(-220px) translateY(-40px);
   }
   #offerings {
-    height: 950px;
+    height: 700px;
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 800px) {
   #aboutUs {
     width: 90%;
   }
@@ -852,6 +853,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   background-size: cover;
+  background-position: bottom;
   width: 100%;
   background-repeat: no-repeat;
 }
