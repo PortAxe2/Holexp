@@ -332,9 +332,7 @@
 
 @media only screen and (min-width: 1200px) {
   .JoinSignContainer {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 65%;
   }
   #JoinSignDiv {
     width: 100%;
@@ -377,11 +375,6 @@
   #landingDiv {
     padding-top: 8px;
   }
-  /*
-    #features{
-        flex-direction: column;
-    }
-    */
   #quickLinks {
     display: none;
   }
@@ -673,6 +666,7 @@ body {
 #features {
   display: -ms-grid;
   display: grid;
+  grid-auto-flow: dense;
   overflow-x: scroll;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1240,7 +1234,7 @@ body {
 }
 
 .submitButton {
-  width: 100%;
+  width: 107%;
   height: 45px;
   border: none;
   display: -webkit-box;

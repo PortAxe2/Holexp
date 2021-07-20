@@ -279,7 +279,7 @@
 
 @media only screen and (min-width:1200px){
     .JoinSignContainer{
-        width: fit-content;
+        width: 65%;
     }
     
 
@@ -318,11 +318,7 @@
     #landingDiv{
         padding-top: 8px;
     }
-    /*
-    #features{
-        flex-direction: column;
-    }
-    */
+    
     #quickLinks{
         display: none;
     }
@@ -540,6 +536,9 @@ body{
         color: #010B1C;
     }
     display: grid;
+    
+    grid-auto-flow: dense;
+    
     overflow-x: scroll;
     height: fit-content;
     margin: auto;
@@ -923,7 +922,7 @@ body{
 
 
 .submitButton{
-    width: 100%;
+    width: 107%;
     height: 45px;
     border: none;
     display: flex;
