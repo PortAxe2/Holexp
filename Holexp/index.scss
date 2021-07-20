@@ -536,8 +536,9 @@ body{
         color: #010B1C;
     }
     display: grid;
+    column-gap: 8px;
+    row-gap: 8px;
     
-    grid-auto-flow: dense;
     
     overflow-x: scroll;
     height: fit-content;
@@ -546,10 +547,6 @@ body{
     padding-top: 64px;
     padding-bottom: 256px;
     justify-items: center;
-    grid-template-areas:
-        "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
-    column-gap: 8px;
-    row-gap: 8px;
     .feature{
         width: 250px;
         height: 300px;

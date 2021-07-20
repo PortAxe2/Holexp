@@ -666,7 +666,9 @@ body {
 #features {
   display: -ms-grid;
   display: grid;
-  grid-auto-flow: dense;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  row-gap: 8px;
   overflow-x: scroll;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -676,10 +678,6 @@ body {
   padding-top: 64px;
   padding-bottom: 256px;
   justify-items: center;
-      grid-template-areas: "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
-  -webkit-column-gap: 8px;
-          column-gap: 8px;
-  row-gap: 8px;
 }
 
 #features a {

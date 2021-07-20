@@ -148,7 +148,7 @@
             <iframe class="videoIframe" id="videoIframe" width="100%" height="100%" src="https://www.youtube.com/embed/_gdkcaH6_UQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-    <div id="features">
+    <div id="features" style="grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4';">
         <div class="feature" onclick="document.getElementById('projects').scrollIntoView({block: 'center'})" style="grid-area: featuresDiv1;">
             <img src="./assets/Projects.png" alt="">
             <p class="english">Mission</p>
@@ -619,7 +619,7 @@
                 document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x_ar.png";
                 document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x_ar.png";
 
-                document.getElementById('features').style.gridTemplateAreas = "featuresDiv4 featuresDiv3 featuresDiv2 featuresDiv1";
+                document.getElementById('features').style = "grid-template-areas: 'featuresDiv4 featuresDiv3 featuresDiv2 featuresDiv1';";
                 
                 document.getElementById('videoIframe').src = "https://www.youtube.com/embed/fXhzKIaxNuo";
                 
@@ -631,7 +631,7 @@
                 document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
                 document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x.png";
                 
-                document.getElementById('features').style.gridTemplateAreas = "featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4';";
                 
                 document.getElementById('videoIframe').src = "https://www.youtube.com/embed/_gdkcaH6_UQ";
 
