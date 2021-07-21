@@ -608,6 +608,9 @@ element1.style.display='none';
             <div id="imageDiv">
                 <img id="signUpIllustration" src="./assets/SIGN_UP illustration_2x.png" alt="Sign up illustration">
             </div>
+            <div class="robot">
+                <img src="./assets/yellow bot_1.png" alt="">
+            </div>
             <div id="JoinTheProgramDiv" class="signLogDivs">
                 <div class="JoinSignContainer">
                     <h1 class="logSignHeader english">Join the program!</h1>
@@ -859,11 +862,11 @@ element1.style.display='none';
 
         $('#SwitchLang').click(function() {
             arabicLang = !arabicLang;
+            setGridTemplate(x);
             if(arabicLang){
                 document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x_ar.png";
                 document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x_ar.png";
 
-                document.getElementById('features').style = "grid-template-areas: 'featuresDiv4 featuresDiv3 featuresDiv2 featuresDiv1';";
                 
                 document.getElementById('videoIframe').src = "https://www.youtube.com/embed/fXhzKIaxNuo";
                 
@@ -875,7 +878,7 @@ element1.style.display='none';
                 document.getElementById('signUpIllustration').src = "./assets/SIGN_UP illustration_2x.png";
                 document.getElementById('robotImageTag').src = "./assets/HOME_illustration_2x.png";
                 
-                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4';";
+                
                 
                 document.getElementById('videoIframe').src = "https://www.youtube.com/embed/_gdkcaH6_UQ";
 
@@ -897,9 +900,17 @@ element1.style.display='none';
 
         function setGridTemplate(x){
             if (x.matches) {
-                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2' 'featuresDiv3 featuresDiv4'";
+                if(arabicLang){
+                    document.getElementById('features').style = "grid-template-areas: 'featuresDiv2 featuresDiv1' 'featuresDiv4 featuresDiv3'";
+                }else{
+                    document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2' 'featuresDiv3 featuresDiv4'";
+                }
             }else{
-                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+                if(arabicLang){
+                    document.getElementById('features').style = "grid-template-areas: 'featuresDiv4 featuresDiv3 featuresDiv2 featuresDiv1";
+                }else{
+                    document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+                }
             }
         }
 

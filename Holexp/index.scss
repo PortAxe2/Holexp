@@ -273,7 +273,7 @@
         margin: auto;
         background-size: cover;
         background-position: right;
-        background-image: url('./assets/yellow_2x.png');
+        //background-image: url('./assets/yellow_2x.png');
         width: 100%;
     }
     .JoinSignContainer{
@@ -316,6 +316,14 @@
 //Smaller Screens
 @media only screen and (max-width: 600px){
 
+    .robot{
+        display: block;
+    }
+
+    #infoTextProj{
+        padding-bottom: 100px;
+    }
+
     #aboutUsHeader{
         padding-top: 64px;
     }
@@ -357,6 +365,10 @@
 
 //Bigger Screens
 @media only screen and (min-width: 600px){
+
+    .robot{
+        display: none;
+    }
 
     #aboutUs{
         padding: 16px;
@@ -613,7 +625,7 @@ body{
             }
         }
         p{
-            
+            text-align: center;
             font-weight: 800;
             font-size: 24pt;
         }
@@ -701,7 +713,6 @@ body{
 #offerings{
     margin-top: 150px;
     display: flex;
-    max-height: 100vh;
     background-size: cover;
     background-position: bottom;
     width: 100%;
@@ -939,7 +950,15 @@ body{
     }
 }
 
+.robot{
+    width: 60%;
+    img{
+        width: 100%;
+    }
+}
+
 #JoinTheProgramMainDiv{
+    padding-bottom: 32px;
     display: flex;
     justify-content: center;
     align-items: center;

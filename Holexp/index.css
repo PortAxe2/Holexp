@@ -325,7 +325,6 @@
     margin: auto;
     background-size: cover;
     background-position: right;
-    background-image: url("./assets/yellow_2x.png");
     width: 100%;
   }
   .JoinSignContainer {
@@ -369,6 +368,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .robot {
+    display: block;
+  }
+  #infoTextProj {
+    padding-bottom: 100px;
+  }
   #aboutUsHeader {
     padding-top: 64px;
   }
@@ -408,6 +413,9 @@
 }
 
 @media only screen and (min-width: 600px) {
+  .robot {
+    display: none;
+  }
   #aboutUs {
     padding: 16px;
     -webkit-column-gap: 16px;
@@ -762,6 +770,7 @@ body {
 }
 
 #features .feature p {
+  text-align: center;
   font-weight: 800;
   font-size: 24pt;
 }
@@ -887,7 +896,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 100vh;
   background-size: cover;
   background-position: bottom;
   width: 100%;
@@ -1234,7 +1242,16 @@ body {
   padding-right: 8px;
 }
 
+.robot {
+  width: 60%;
+}
+
+.robot img {
+  width: 100%;
+}
+
 #JoinTheProgramMainDiv {
+  padding-bottom: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
