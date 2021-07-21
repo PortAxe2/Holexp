@@ -97,7 +97,7 @@
     }
     
     #offerings{
-        height: 700px;
+        height: fit-content;
     }
 }
 
@@ -218,10 +218,11 @@
             font-size: 48pt;
         }
     }
+
     #offeringsList{
         padding-bottom: 320px;
     }
-
+    
     #introductoryInfo{
         width: 100%;
         flex-direction: column;
@@ -539,8 +540,6 @@ body{
     display: grid;
     column-gap: 8px;
     row-gap: 8px;
-    
-    
     overflow-x: scroll;
     height: fit-content;
     margin: auto;
@@ -657,6 +656,7 @@ body{
 #offerings{
     margin-top: 150px;
     display: flex;
+    max-height: 100vh;
     background-size: cover;
     background-position: bottom;
     width: 100%;
