@@ -271,7 +271,9 @@
 
     #JoinSignDiv{
         margin: auto;
-        background-image: none;
+        background-size: cover;
+        background-position: right;
+        background-image: url('./assets/yellow_2x.png');
         width: 100%;
     }
     .JoinSignContainer{
@@ -288,8 +290,11 @@
     #JoinSignDiv{
         width: 100%;
         align-items: flex-start;
+        background-position: left, bottom right;
+        background-size: contain, 300px;
         background-image: url('./assets/yellow_2x.png'), url('./assets/pink.svg');
     }
+
     #YTWrapper{
         width: 50%;
     }
@@ -329,6 +334,7 @@
             width: 90%;
         }
     }
+
     #landingDiv{
         padding-top: 8px;
     }
@@ -883,9 +889,7 @@ body{
 #JoinSignDiv{
     height: 800px;
     background-color: white;
-    background-position: left, bottom right;
     background-repeat: no-repeat;
-    background-size: contain, 300px;
     display: flex;
     justify-content: center;
     align-items: center;
