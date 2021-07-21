@@ -311,6 +311,10 @@
 //Smaller Screens
 @media only screen and (max-width: 600px){
 
+    #aboutUsHeader{
+        padding-top: 64px;
+    }
+
     #aboutUs{
         height: fit-content;
         grid-template-areas: 
