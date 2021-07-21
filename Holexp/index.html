@@ -4,6 +4,7 @@
 
 <head>
     <title>HOLEXP</title>
+    <link rel="icon" href="logo_7dl5dmc5vcm3ptlz7ja3erx4gi9viezq/logo2.png" type="image/icon type">   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="index.css">
@@ -12,6 +13,219 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+<script>
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+function enableBtn()
+{
+  document.getElementById("enable_signup").disabled = false;   
+}
+
+function Validate_and_send_to_signup()
+{
+//validate usermane
+if ((document.getElementById('user_name').value.length < 5) || (document.getElementById('user_name').value.length > 128)) {
+    let element=document.getElementById('wrong_credentials_label_en1');
+    element.innerHTML= "username must be at least 5 characters";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar1');
+    element1.innerHTML= "يجب ألا يقل اسم المستخدم عن ٥ أحرف";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}   
+
+//check if 'email' field is compliant
+if (!validateEmail(document.getElementById('email1').value)) {
+    let element=document.getElementById('wrong_credentials_label_en1');
+    element.innerHTML= "invalid email format";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar1');
+    element1.innerHTML= "بريد إلكتروني غير صالح";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}    
+
+//check if 'password' field is compliant
+if (!validatePassword(document.getElementById('password1').value)) {
+    let element=document.getElementById('wrong_credentials_label_en1');
+    element.innerHTML= "password must be between 8 and 20 characters with at least 1 upper case, 1 lower case, and 1 numeric character";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar1');
+    element1.innerHTML= "يجب أن تتكون كلمة المرور من ٨ إلى ٢٠ حرفًا مع حرف واحد كبير وحرف واحد صغير وحرف رقمي واحد على الأقل";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}  
+
+//check if 'password' field is not equal to 're_password'
+if ((document.getElementById('password1').value) !== (document.getElementById('reenter_password1').value)) {
+    let element=document.getElementById('wrong_credentials_label_en1');
+    element.innerHTML= "passwords do not match";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar1');
+    element1.innerHTML= "كلمة المرور غير مطابقة";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}  
+
+//sanitize data before submitting
+
+var username1= escapeHtml(document.getElementById('user_name').value);   
+var email1= escapeHtml(document.getElementById('email1').value);  
+var password1= escapeHtml(document.getElementById('password1').value);    
+
+    $.post("sign_up.php",
+    {  
+      username: username1,
+      email:    email1,
+      password: password1 //add comma if u want to uncomment below
+      //phone:    document.getElementById('user_phone').value,
+      //address:  document.getElementById('user_address').value    
+    },
+    function(data,status){  
+        let res = data.substr(0, 7); 
+        if (res == "False01") {      
+    	let element=document.getElementById('wrong_credentials_label_en1');
+  	    element.innerHTML= "email already registered";
+  	    element.style.display='block';
+  	    let element1=document.getElementById('wrong_credentials_label_ar1');
+  	    element1.innerHTML= "البريد الإلكتروني مسجل مسبقا";
+   	    element1.style.display='block';
+   	    window.scrollBy(0, 50000);        
+   	    return;        
+        }         
+        else if (res == "Success") { //credentials successfully saved
+            document.getElementById('enable_signup').disabled = true;
+            document.getElementById('user_name').value= "";
+            //document.getElementById("user_name").disabled = true;
+            //document.getElementById("email1").disabled = true;
+            document.getElementById('email1').value= "";
+            //document.getElementById("password1").disabled = true;
+            document.getElementById('password1').value= "";
+            //document.getElementById("reenter_password1").disabled = true;     
+            document.getElementById('reenter_password1').value= "";
+        let element=document.getElementById('wrong_credentials_label_en1');
+        element.innerHTML= "successful registration! an email has been sent to you, check your inbox or spam to activate your account and start using holexp";
+        element.style.display='block';
+        let element1=document.getElementById('wrong_credentials_label_ar1');
+        element1.innerHTML= "تسجيل ناجح! تم إرسال بريد إلكتروني إليك ، تحقق من البريد الوارد أو البريد العشوائي لتنشيط حسابك والبدء في استخدام هوليكسبي";
+        element1.style.display='block';
+        window.scrollBy(0, 50000);        
+        return;             
+        }
+        else {
+        //alert(data);        
+        let element=document.getElementById('wrong_credentials_label_en1');
+        element.innerHTML= "unable to save in database, please try again in a moment";
+        element.style.display='block';
+        let element1=document.getElementById('wrong_credentials_label_ar1');
+        element1.innerHTML= "غير قادر على الحفظ في قاعدة البيانات ، يرجى المحاولة مرة أخرى بعد قليل";
+        element1.style.display='block';
+        window.scrollBy(0, 50000);        
+        return;         
+        }         
+    });
+}
+
+function Validate_and_send()
+{
+//check if 'email' field is compliant
+if (!validateEmail(document.getElementById('email').value)) {
+    let element=document.getElementById('wrong_credentials_label_en');
+    element.innerHTML= "invalid email format";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar');
+    element1.innerHTML= "بريد إلكتروني غير صالح";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}    
+
+//check if 'password' field is compliant
+if (!validatePassword(document.getElementById('password').value)) {
+    let element=document.getElementById('wrong_credentials_label_en');
+    element.innerHTML= "password must be between 8 and 20 characters with at least 1 upper case, 1 lower case, and 1 numeric character";
+    element.style.display='block';
+    let element1=document.getElementById('wrong_credentials_label_ar');
+    element1.innerHTML= "يجب أن تتكون كلمة المرور من ٨ إلى ٢٠ حرفًا مع حرف واحد كبير وحرف واحد صغير وحرف رقمي واحد على الأقل";
+    element1.style.display='block';
+    window.scrollBy(0, 50000);
+    return;
+}  
+
+    $.post("check_user_credentials.php",
+    {  
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    },
+    function(data,status){  
+        let res = data.substr(0, 7); 
+        if (res !== "Success") {
+            let element=document.getElementById('wrong_credentials_label_en');
+            element.innerHTML= "wrong credentials, please try again";
+            element.style.display='block';
+            let element1=document.getElementById('wrong_credentials_label_ar');
+            element1.innerHTML= "بيانات اعتماد خاطئة ، يرجى المحاولة من جديد";
+            element1.style.display='block';        
+            window.scrollBy(0, 50000);
+            return;
+        } 
+        else { //successful loging hence redirect to main.php page 
+            let res1= data.substr(7);
+            window.location.replace("main.php?name="+res1);
+        }
+    });
+}
+
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validatePassword(password)
+  {
+if (password == "") return false;
+if ((password.length < 8) || (password.length > 20)) return false;
+re = /[0-9]/;
+if (!re.test(password)) return false;
+re = /[a-z]/;
+if (!re.test(password)) return false;
+re = /[A-Z]/;
+if (!re.test(password)) return false;
+return true;
+  }
+
+function remove_wrong_credentials_label() {
+let element=document.getElementById('wrong_credentials_label_en');
+element.style.display='none';
+let element1=document.getElementById('wrong_credentials_label_ar');
+element1.style.display='none';
+}      
+
+function remove_wrong_credentials_label1() {
+let element=document.getElementById('wrong_credentials_label_en1');
+element.style.display='none';
+let element1=document.getElementById('wrong_credentials_label_ar1');
+element1.style.display='none';
+} 
+</script>    
 </head>
 
 
@@ -398,25 +612,40 @@
                 <div class="JoinSignContainer">
                     <h1 class="logSignHeader english">Join the program!</h1>
                     <h1 class="logSignHeader arabic" style="text-align: right;">!انضم إلى البرنامج</h1>
-                    <br>
-                    <form class="formSign" action="">
+                    <br>              
+                
+                        <fieldset class="fieldTag">
+                            <legend class="english">Username</legend>
+                            <legend class="arabic" style="text-align: right;">إسم االمستخدم</legend>
+                            <input name="user_name" onfocus="remove_wrong_credentials_label1()" id="user_name">
+                        </fieldset>
+                
                         <fieldset class="fieldTag">
                             <legend class="english">Email address</legend>
                             <legend class="arabic" style="text-align: right;">عنوان البريد الإلكتروني</legend>
-                            <input type="email" name="email" id="email">
+                            <input type="email" onfocus="remove_wrong_credentials_label1()" name="email1" id="email1">
                         </fieldset>
                         <fieldset class="fieldTag">
                             <legend class="english">Password</legend>
                             <legend class="arabic" style="text-align: right;">كلمة السر</legend>
-                            <input type="password" name="password" id="password">
+                            <input type="password" onfocus="remove_wrong_credentials_label1()" name="password1" id="password1">
                         </fieldset>
-                        <button class="submitButton" type="submit">
+                        <fieldset class="fieldTag">
+                            <legend class="english">Repeat password</legend>
+                            <legend class="arabic" style="text-align: right;">إعادة كلمة السر</legend>
+                            <input type="password" onfocus="remove_wrong_credentials_label1()" name="reenter_password1" id="reenter_password1">
+                        </fieldset>                
+                
+<br>                
+<div class="g-recaptcha right" data-theme="light" data-sitekey="6LfXL30aAAAAAPqiNW_ta2CqcN_6GFHEwSb5eHg_" style="transform:scale(0.77);-webkit-transform:scale(1);" data-callback="enableBtn"></div>  
+                
+                        <button class="submitButton" id="enable_signup" onclick="Validate_and_send_to_signup()" disabled>
                             <span class="english">Sign Up</span>
                             <span style="--Direction: translateX(4px);" id="leftChev" style="font-size: 14pt;" class="material-icons english">chevron_right</span>
                             <span style="--Direction: translateX(-4px);" id="rightChev" style="font-size: 14pt;" class="material-icons arabic">chevron_left</span>
                             <span class="arabic" style="text-align: right;">أفتح حساب</span>
                         </button>
-                    </form>
+  
                     <button class="noYesAccount accountExists english">
                         <span>Already have an account?</span>
                     </button>
@@ -424,33 +653,42 @@
                         <span>هل لديك حساب؟</span>
                     </button>
                 </div>
+            
+<div>
+    <p class="left" align=left id="wrong_credentials_label_en1" style="color:red; display:none">
+    <p class="right" align=right id="wrong_credentials_label_ar1" style="color:red; display:none">
+</div>  
+            
             </div>
             <div style="display: none;" id="SignInDiv" class="signLogDivs">
                 <div class="JoinSignContainer">
                     <h1 class="logSignHeader english">Log back in!</h1>
                     <h1 class="logSignHeader arabic" style="text-align: right;">!تسجيل الدخول</h1>
                     <br>
-                    <form class="formSign" action="">
+    
                         <fieldset class="fieldTag">
                             <legend class="english">Email address</legend>
                             <legend class="arabic" style="text-align: right;">عنوان البريد الإلكتروني</legend>
-                            <input type="email" name="email" id="email">
+                            <input type="email" onfocus="remove_wrong_credentials_label()" name="email" id="email">
                         </fieldset>
                         <fieldset class="fieldTag">
                             <legend class="english">Password</legend>
                             <legend class="arabic" style="text-align: right;">كلمة السر</legend>
-                            <input type="password" name="password" id="password">
+                            <input type="password" onfocus="remove_wrong_credentials_label()" name="password" id="password">
                         </fieldset>
-                        <button class="forgotPassword english" style="float: right;">
+                        <button class="forgotPassword english" style="float: left;">
                             <span>Forgot password?</span>
                         </button>
-                        <button class="submitButton" type="submit">
+                        <button class="forgotPassword arabic" style="float: right;">
+                            <span>نسيت كلمة السر؟</span>
+                        </button>                
+                        <button class="submitButton" onclick="Validate_and_send()">
                             <span class="english">Log In</span>
                             <span style="--Direction: translateX(4px);" id="leftChev" style="font-size: 14pt;" class="material-icons english">chevron_right</span>
                             <span style="--Direction: translateX(-4px);" id="rightChev" style="font-size: 14pt;" class="material-icons arabic">chevron_left</span>
                             <span class="arabic" style="text-align: right;">تسجيل الدخول</span>
                         </button>
-                    </form>
+ 
                     <button class="noYesAccount noAccount arabic" style="float: right;">
                         <span>جديد هنا؟ قم بإنشاء حساب</span>
                     </button>
@@ -458,6 +696,12 @@
                         <span>New here? Sign up instead</span>
                     </button>
                 </div>
+            
+<div>
+    <p class="left" align=left id="wrong_credentials_label_en" style="color:red; display:none">
+    <p class="right" align=right id="wrong_credentials_label_ar" style="color:red; display:none">
+</div>            
+            
             </div>
         </div>
 
@@ -650,6 +894,18 @@
             event.classList.add('offeringListItem-selected');
             document.getElementById("offerings").style.backgroundImage = offeringsMap[event.innerHTML];
         }
+
+        function setGridTemplate(x){
+            if (x.matches) {
+                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2' 'featuresDiv3 featuresDiv4'";
+            }else{
+                document.getElementById('features').style = "grid-template-areas: 'featuresDiv1 featuresDiv2 featuresDiv3 featuresDiv4";
+            }
+        }
+
+        var x = window.matchMedia("(max-width: 600px");
+        setGridTemplate(x);
+        x.addListener(setGridTemplate);
                
         
     </script>
