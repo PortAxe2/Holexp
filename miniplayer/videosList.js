@@ -1,5 +1,5 @@
 var videoIDs;
-var apiKey = "AIzaSyDjg7tek3j4d5XfvvA0r1loAhZ9UwkdoRg";
+var apiKey = "removed";
 var mainContainer;
 var wrapperDiv;
 var videoDetail;
